@@ -289,7 +289,7 @@ const treeStructure = `<span class="dir">low-level-dev-skills/</span>
     ├── <span class="dir">profilers/</span>  <span class="comment"># flamegraphs hardware-counters heaptrack intel-vtune-amd-uprof linux-perf strace-ltrace +2</span>
     ├── <span class="dir">runtimes/</span>  <span class="comment"># binary-hardening formal-verification fuzzing sanitizers wasm-emscripten wasm-wasmtime</span>
     ├── <span class="dir">security/</span>  <span class="comment"># memory-safe-c-cpp</span>
-    └── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals</span>
+    └── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals</span>`;
 
 function updateClock() {
   const now = new Date();
