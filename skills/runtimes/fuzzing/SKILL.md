@@ -320,5 +320,4 @@ For fuzz target templates, corpus seed examples, and OSS-Fuzz integration guidan
 - Use `skills/runtimes/sanitizers` to add ASan/UBSan to fuzz builds
 - Use `skills/compilers/clang` for Clang-specific libFuzzer flags
 - Use `skills/debuggers/gdb` to debug crash inputs found by the fuzzer
-- Use `skills/security/kernel-security` for kernel fuzzing with syzkaller
 - Use `skills/runtimes/formal-verification` to prove properties for all inputs with Kani or CBMC

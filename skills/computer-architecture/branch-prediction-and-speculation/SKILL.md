@@ -101,7 +101,6 @@ High `branch-misses` ratio → investigate hot branches.
 ## Related skills
 
 - `skills/computer-architecture/cpu-pipelines-and-hazards` — control hazards
-- `skills/security/kernel-security` — KPTI, CET, speculation mitigations
 - `skills/low-level-programming/cpu-cache-opt` — cache timing channels
 - `skills/profilers/hardware-counters` — branch-misses event
 - `skills/runtimes/binary-hardening` — userspace hardening overlap

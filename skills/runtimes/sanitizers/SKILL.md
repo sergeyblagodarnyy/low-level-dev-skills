@@ -252,7 +252,7 @@ sudo insmod mymod.ko
 dmesg | tail -30
 ```
 
-Pair with `skills/kernel/kernel-testing` for KUnit tests under KASAN. See `skills/security/kernel-security` for KASAN report triage.
+Pair with `skills/kernel/kernel-testing` for KUnit tests under KASAN.
 
 For a quick flag reference, see [references/flags.md](references/flags.md).
 For report interpretation examples, see [references/reports.md](references/reports.md).

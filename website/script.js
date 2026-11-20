@@ -116,12 +116,9 @@ const skills = [
   { name: "wasm-emscripten", category: "runtimes", desc: "Guide agents through compiling C/C++ to WebAssembly using Emscripten: emcc flag selection, function exports, memory model configuration, ..." },
   { name: "wasm-wasmtime", category: "runtimes", desc: "Guide agents through wasmtime: running WASM modules from the CLI, WASI APIs, the component model with WIT interfaces, embedding wasmtime ..." },
   // security
-  { name: "kernel-security", category: "security", desc: "Guide agents through Linux kernel security: LSM frameworks (SELinux, AppArmor), seccomp-bpf with libseccomp, KASLR and bypass mitigations..." },
   { name: "memory-safe-c-cpp", category: "security", desc: "Guide agents through making existing C and C++ safer: -fhardened and FORTIFY, counted_by bounds checks, library hardening, Arm MTE,..." },
-  { name: "reverse-engineering", category: "security", desc: "Guide agents through reverse engineering binaries: Ghidra project setup and decompilation, radare2 analysis workflow, Binary Ninja script..." },
   // virtualization
   { name: "containers-internals", category: "virtualization", desc: "Guide agents through Linux container internals: namespaces (clone, unshare, nsenter), cgroups v2 resource limits, overlayfs storage, runc..." },
-  { name: "hypervisor-internals", category: "virtualization", desc: "Explain hardware virtualization internals for agents: Intel VT-x (VMXON, VMCS, VMLAUNCH/VMRESUME, VMEXIT reasons), AMD SVM (VMCB, #VMEXIT..." },
 ];
 
 function skillPath(skill) {
@@ -162,10 +159,10 @@ const tagInstalls = [
     desc: 'Full C/C++ toolchain — compilers, debuggers, profilers, build systems, binaries, safety, and low-level programming',
     color: 'cyan',
     subcategories: [
-      { label: 'Compilers', skills: ['gcc', 'clang', 'llvm', 'msvc-cl', 'cross-gcc', 'pgo', 'cpp-modules', 'cpp-templates', 'modern-c-cpp-standards'] },
+      { label: 'Compilers', skills: ['gcc', 'clang', 'llvm', 'cross-gcc', 'cpp-modules', 'cpp-templates', 'modern-c-cpp-standards'] },
       { label: 'Debuggers', skills: ['gdb', 'lldb', 'core-dumps', 'concurrency-debugging', 'debug-optimized-builds', 'dwarf-debug-format'] },
       { label: 'Profilers', skills: ['linux-perf', 'valgrind', 'flamegraphs', 'strace-ltrace', 'heaptrack', 'intel-vtune-amd-uprof', 'hardware-counters', 'tracing-profilers'] },
-      { label: 'Build Systems', skills: ['cmake', 'make', 'ninja', 'meson', 'conan-vcpkg', 'static-analysis', 'build-acceleration', 'bazel', 'include-what-you-use'] },
+      { label: 'Build Systems', skills: ['cmake', 'make', 'ninja', 'static-analysis', 'build-acceleration', 'include-what-you-use'] },
       { label: 'Binaries', skills: ['elf-inspection', 'linkers-lto', 'binutils', 'dynamic-linking'] },
       { label: 'Safety & Runtimes', skills: ['sanitizers', 'fuzzing', 'binary-hardening', 'formal-verification'] },
       { label: 'Low-Level Programming', skills: ['assembly-x86', 'assembly-arm', 'assembly-riscv', 'simd-intrinsics', 'memory-model', 'cpu-cache-opt', 'interpreters', 'cpp-coroutines', 'linux-kernel-modules', 'riscv-vector'] },
@@ -181,7 +178,7 @@ const tagInstalls = [
       { label: 'Bring-up', skills: ['baremetal-startup', 'mmio-and-bit-manipulation', 'interrupts-and-exceptions-baremetal', 'stm32-baremetal', 'bootloaders-embedded'] },
       { label: 'Peripherals', skills: ['gpio-baremetal', 'uart-serial-baremetal', 'spi-i2c-baremetal', 'timers-pwm-baremetal', 'adc-dac-baremetal', 'dma-baremetal'] },
       { label: 'Documentation', skills: ['peripherals-from-datasheet', 'datasheet-and-refmanual-reading'] },
-      { label: 'Power & Size', skills: ['low-power-embedded', 'resource-optimization-lowend'] },
+      { label: 'Power & Size', skills: ['low-power-embedded'] },
     ],
   },
   {
@@ -191,8 +188,8 @@ const tagInstalls = [
     color: 'red',
     subcategories: [
       { label: 'Architecture & MM', skills: ['linux-kernel-architecture', 'kernel-memory-management', 'kernel-concurrency', 'kernel-internals'] },
-      { label: 'Driver Model', skills: ['device-tree', 'platform-device-model', 'writing-char-drivers', 'bus-drivers-i2c-spi', 'device-drivers', 'rust-for-linux'] },
-      { label: 'Debug & Test', skills: ['kernel-debugging', 'kernel-debugging-advanced', 'kernel-testing', 'qemu-for-kernel-development'] },
+      { label: 'Driver Model', skills: ['device-tree', 'platform-device-model', 'writing-char-drivers', 'bus-drivers-i2c-spi', 'device-drivers'] },
+      { label: 'Debug & Test', skills: ['kernel-debugging', 'kernel-debugging-advanced', 'kernel-testing'] },
     ],
   },
   {
@@ -201,11 +198,6 @@ const tagInstalls = [
     desc: 'Full Rust toolchain — rustc, Cargo, debugging, profiling, FFI, cross-compilation, async internals, safety, and no_std',
     color: 'amber',
     subcategories: [
-      { label: 'Compiler & Cargo', skills: ['rustc-basics', 'cargo-workflows', 'rust-build-times'] },
-      { label: 'Debugging & Profiling', skills: ['rust-debugging', 'rust-profiling'] },
-      { label: 'FFI & Cross-compilation', skills: ['rust-ffi', 'rust-cross', 'rust-no-std'] },
-      { label: 'Async & Internals', skills: ['rust-async-internals', 'rust-unsafe'] },
-      { label: 'Safety & Security', skills: ['rust-sanitizers-miri', 'rust-security'] },
     ],
   },
   {
@@ -214,10 +206,6 @@ const tagInstalls = [
     desc: 'Full Zig toolchain — compiler, build system, C interop, debugging, cross-compilation, testing, and comptime',
     color: 'magenta',
     subcategories: [
-      { label: 'Compiler & Build', skills: ['zig-compiler', 'zig-build-system'] },
-      { label: 'C Interop', skills: ['zig-cinterop'] },
-      { label: 'Debugging & Cross', skills: ['zig-debugging', 'zig-cross'] },
-      { label: 'Testing & Comptime', skills: ['zig-testing', 'zig-comptime'] },
     ],
   },
   {
@@ -226,10 +214,8 @@ const tagInstalls = [
     desc: 'RTOS, hardware debug, linker scripts, embedded Rust, and QEMU simulation',
     color: 'green',
     subcategories: [
-      { label: 'RTOS', skills: ['freertos', 'zephyr'] },
       { label: 'Debug & Flash', skills: ['openocd-jtag', 'cross-gcc'] },
-      { label: 'Linker & Memory', skills: ['linker-scripts', 'embedded-rust', 'rust-no-std'] },
-      { label: 'QEMU & Tools', skills: ['qemu-embedded-simulation', 'protocol-analysis', 'verilog-basics-for-lowlevel'] },
+      { label: 'Linker & Memory', skills: ['linker-scripts'] },
     ],
   },
   {
@@ -238,7 +224,6 @@ const tagInstalls = [
     desc: 'CUDA, ROCm, Triton, GPU memory model, OpenMP, MPI, and RDMA',
     color: 'cyan',
     subcategories: [
-      { label: 'GPU', skills: ['cuda', 'cuda-profiling', 'cuda-debugging', 'triton-lang', 'hip-rocm', 'gpu-memory-model', 'cuda-tile'] },
       { label: 'HPC', skills: ['openmp', 'mpi', 'rdma-verbs'] },
     ],
   },
@@ -248,12 +233,11 @@ const tagInstalls = [
     desc: 'Compiler internals, virtualization, async I/O, allocators, security, and platform-specific',
     color: 'amber',
     subcategories: [
-      { label: 'Compiler Internals', skills: ['compiler-frontend', 'llvm-passes', 'llvm-ir-and-passes', 'compiler-optimizations-deep', 'code-generation-and-backends', 'mlir', 'jit-compilation'] },
-      { label: 'Virtualization', skills: ['qemu-kvm', 'hypervisor-internals', 'containers-internals'] },
-      { label: 'Async I/O', skills: ['io-uring', 'dpdk', 'af-xdp'] },
+      { label: 'Compiler Internals', skills: ['compiler-frontend', 'llvm-passes', 'llvm-ir-and-passes', 'compiler-optimizations-deep', 'code-generation-and-backends', 'jit-compilation'] },
+      { label: 'Virtualization', skills: ['containers-internals'] },
       { label: 'Allocators & NUMA', skills: ['custom-allocators', 'numa-programming'] },
-      { label: 'Security', skills: ['reverse-engineering', 'kernel-security', 'memory-safe-c-cpp'] },
-      { label: 'Platform', skills: ['arm-sve', 'riscv-privileged', 'apple-silicon'] },
+      { label: 'Security', skills: ['memory-safe-c-cpp'] },
+      { label: 'Platform', skills: ['arm-sve', 'riscv-privileged'] },
     ],
   },
   {
@@ -262,9 +246,9 @@ const tagInstalls = [
     desc: 'eBPF tracing, WebAssembly runtimes, and binary hardening',
     color: 'red',
     subcategories: [
-      { label: 'eBPF', skills: ['ebpf', 'ebpf-rust', 'sched-ext'] },
+      { label: 'eBPF', skills: ['ebpf', 'sched-ext'] },
       { label: 'WebAssembly', skills: ['wasm-emscripten', 'wasm-wasmtime'] },
-      { label: 'Hardening', skills: ['binary-hardening', 'rust-security'] },
+      { label: 'Hardening', skills: ['binary-hardening'] },
     ],
   },
 ];
@@ -285,32 +269,27 @@ const steps = [
 const treeStructure = `<span class="dir">low-level-dev-skills/</span>
 ├── <span class="file">README.md</span>
 ├── <span class="file">AGENTS.md</span>
-└── <span class="dir">skills/</span>    <span class="comment"># 103 skills across 20 categories</span>
+└── <span class="dir">skills/</span>    <span class="comment"># 100 skills across 20 categories</span>
     ├── <span class="dir">allocators/</span>  <span class="comment"># custom-allocators numa-programming</span>
-    ├── <span class="dir">async-io/</span>  <span class="comment"># af-xdp dpdk io-uring</span>
-    ├── <span class="dir">baremetal/</span>  <span class="comment"># adc-dac-baremetal baremetal-startup bootloaders-embedded datasheet-and-refmanual-reading dma-baremetal gpio-baremetal +8 more</span>
+    ├── <span class="dir">baremetal/</span>  <span class="comment"># adc-dac-baremetal baremetal-startup bootloaders-embedded datasheet-and-refmanual-reading dma-baremetal gpio-baremetal +8</span>
     ├── <span class="dir">binaries/</span>  <span class="comment"># binutils dynamic-linking elf-inspection linkers-lto</span>
-    ├── <span class="dir">build-systems/</span>  <span class="comment"># bazel build-acceleration cmake conan-vcpkg include-what-you-use make +3 more</span>
-    ├── <span class="dir">compiler-internals/</span>  <span class="comment"># code-generation-and-backends compiler-frontend compiler-optimizations-deep jit-compilation llvm-ir-and-passes llvm-passes +1 more</span>
-    ├── <span class="dir">compilers/</span>  <span class="comment"># clang cpp-modules cpp-templates cross-gcc gcc llvm +3 more</span>
+    ├── <span class="dir">build-systems/</span>  <span class="comment"># build-acceleration cmake include-what-you-use make +3</span>
+    ├── <span class="dir">compiler-internals/</span>  <span class="comment"># code-generation-and-backends compiler-frontend compiler-optimizations-deep jit-compilation llvm-ir-and-passes llvm-passes +1</span>
+    ├── <span class="dir">compilers/</span>  <span class="comment"># clang cpp-modules cpp-templates cross-gcc gcc llvm +3</span>
     ├── <span class="dir">computer-architecture/</span>  <span class="comment"># abi-and-calling-conventions branch-prediction-and-speculation cpu-pipelines-and-hazards memory-hierarchy-and-caches virtual-memory-paging-and-tlb</span>
     ├── <span class="dir">debuggers/</span>  <span class="comment"># concurrency-debugging core-dumps debug-optimized-builds dwarf-debug-format gdb lldb</span>
-    ├── <span class="dir">embedded/</span>  <span class="comment"># embedded-rust freertos linker-scripts openocd-jtag zephyr</span>
-    ├── <span class="dir">gpu/</span>  <span class="comment"># cuda cuda-debugging cuda-profiling cuda-tile gpu-memory-model hip-rocm +1 more</span>
+    ├── <span class="dir">embedded/</span>  <span class="comment"># linker-scripts openocd-jtag</span>
     ├── <span class="dir">hpc/</span>  <span class="comment"># mpi openmp rdma-verbs</span>
     ├── <span class="dir">kernel/</span>  <span class="comment"># device-drivers kernel-debugging kernel-internals kernel-testing os-dev-scratch</span>
-    ├── <span class="dir">kernel-dev/</span>  <span class="comment"># bus-drivers-i2c-spi device-tree kernel-concurrency kernel-debugging-advanced kernel-memory-management linux-kernel-architecture +4 more</span>
+    ├── <span class="dir">kernel-dev/</span>  <span class="comment"># bus-drivers-i2c-spi device-tree kernel-concurrency kernel-debugging-advanced kernel-memory-management linux-kernel-architecture +4</span>
     ├── <span class="dir">languages/</span>  <span class="comment"># carbon-lang hare-lang</span>
-    ├── <span class="dir">low-level-programming/</span>  <span class="comment"># assembly-arm assembly-riscv assembly-x86 cpp-coroutines cpu-cache-opt interpreters +4 more</span>
-    ├── <span class="dir">observability/</span>  <span class="comment"># ebpf ebpf-rust sched-ext</span>
-    ├── <span class="dir">platform/</span>  <span class="comment"># apple-silicon arm-sve riscv-privileged</span>
-    ├── <span class="dir">profilers/</span>  <span class="comment"># flamegraphs hardware-counters heaptrack intel-vtune-amd-uprof linux-perf strace-ltrace +2 more</span>
-    ├── <span class="dir">qemu/</span>  <span class="comment"># protocol-analysis qemu-embedded-simulation resource-optimization-lowend verilog-basics-for-lowlevel</span>
+    ├── <span class="dir">low-level-programming/</span>  <span class="comment"># assembly-arm assembly-riscv assembly-x86 cpp-coroutines cpu-cache-opt interpreters +4</span>
+    ├── <span class="dir">observability/</span>  <span class="comment"># ebpf sched-ext</span>
+    ├── <span class="dir">platform/</span>  <span class="comment"># arm-sve riscv-privileged</span>
+    ├── <span class="dir">profilers/</span>  <span class="comment"># flamegraphs hardware-counters heaptrack intel-vtune-amd-uprof linux-perf strace-ltrace +2</span>
     ├── <span class="dir">runtimes/</span>  <span class="comment"># binary-hardening formal-verification fuzzing sanitizers wasm-emscripten wasm-wasmtime</span>
-    ├── <span class="dir">rust/</span>  <span class="comment"># cargo-workflows rust-async-internals rust-build-times rust-cross rust-debugging rust-ffi +6 more</span>
-    ├── <span class="dir">security/</span>  <span class="comment"># kernel-security memory-safe-c-cpp reverse-engineering</span>
-    ├── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals hypervisor-internals qemu-kvm</span>
-    └── <span class="dir">zig/</span>  <span class="comment"># zig-build-system zig-cinterop zig-compiler zig-comptime zig-cross zig-debugging +1 more</span>`;
+    ├── <span class="dir">security/</span>  <span class="comment"># memory-safe-c-cpp</span>
+    └── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals</span>
 
 function updateClock() {
   const now = new Date();

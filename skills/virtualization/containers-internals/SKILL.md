@@ -232,7 +232,6 @@ Known escape vectors: mounted docker.sock, privileged mode, kernel CVEs, `/proc`
 
 ## Related skills
 
-- `skills/security/kernel-security` — SELinux, AppArmor, seccomp depth
 - `skills/observability/ebpf` — trace container syscalls
 - `skills/runtimes/binary-hardening` — seccomp and capabilities in production
 - `skills/kernel/kernel-internals` — cgroups and namespaces in kernel

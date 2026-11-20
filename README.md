@@ -75,13 +75,13 @@ npx skills add mohitmishra786/low-level-dev-skills --skill custom-allocators num
 npx skills add mohitmishra786/low-level-dev-skills --skill compiler-frontend llvm-passes llvm-ir-and-passes compiler-optimizations-deep code-generation-and-backends jit-compilation
 
 # Virtualization
-npx skills add mohitmishra786/low-level-dev-skills --skill hypervisor-internals containers-internals
+npx skills add mohitmishra786/low-level-dev-skills --skill containers-internals
 
 # HPC and parallel programming
 npx skills add mohitmishra786/low-level-dev-skills --skill openmp mpi rdma-verbs
 
 # Security and reverse engineering
-npx skills add mohitmishra786/low-level-dev-skills --skill reverse-engineering kernel-security memory-safe-c-cpp
+npx skills add mohitmishra786/low-level-dev-skills --skill memory-safe-c-cpp
 
 # Platform-specific (ARM SVE, RISC-V privileged, Apple Silicon)
 npx skills add mohitmishra786/low-level-dev-skills --skill arm-sve riscv-privileged
@@ -181,8 +181,6 @@ After installation, invoke skills in your AI agent:
 
 ### Security and platform
 ```
-/reverse-engineering Triage this stripped ELF with Ghidra
-/kernel-security Write an AppArmor profile for my daemon
 /arm-sve Write a vector-length agnostic SAXPY kernel
 ```
 
@@ -354,19 +352,16 @@ After installation, invoke skills in your AI agent:
 | `code-generation-and-backends` | ISel, TableGen, llc, target lowering overview |
 | `jit-compilation` | ORC JIT, LLJIT, Cranelift, inline caches, W^X policy |
 
-### Virtualization (2 skills)
+### Virtualization (1 skills)
 
 | Skill | Purpose |
 |-------|---------|
-| `hypervisor-internals` | VT-x/SVM, VMCS/VMCB, EPT/NPT, APIC virtualization |
 | `containers-internals` | namespaces, cgroups v2, overlayfs, runc, seccomp |
 
-### Security (3 skills)
+### Security (1 skills)
 
 | Skill | Purpose |
 |-------|---------|
-| `reverse-engineering` | Ghidra, radare2, Binary Ninja, stripped binary triage |
-| `kernel-security` | SELinux, AppArmor, seccomp, KASLR, CET, PAC/BTI, KASAN |
 | `memory-safe-c-cpp` | -fhardened, FORTIFY, counted_by, auto-var-init, MTE, hardened allocators, Fil-C, CHERI |
 
 ### HPC (3 skills)
@@ -391,7 +386,7 @@ After installation, invoke skills in your AI agent:
 | `carbon-lang` | Carbon syntax, C++ interop, carbon-toolchain, migration |
 | `hare-lang` | hare build/test, stdlib, C FFI, tagged union errors |
 
-**Total: 103 skills**
+**Total: 100 skills**
 
 ## Design
 
@@ -411,4 +406,4 @@ Contributions are welcome! To add or improve a skill:
 
 ## Topics
 
-`ai-agent-skills` `low-level-programming` `c-cpp-toolchain` `systems-programming` `compilers` `debuggers` `profilers` `build-systems` `embedded` `bare-metal` `cross-compilation` `ebpf` `webassembly` `risc-v` `linux-kernel` `kernel-drivers` `computer-architecture` `hpc` `mpi` `virtualization` `reverse-engineering`
+`ai-agent-skills` `low-level-programming` `c-cpp-toolchain` `systems-programming` `compilers` `debuggers` `profilers` `build-systems` `embedded` `bare-metal` `cross-compilation` `ebpf` `webassembly` `risc-v` `linux-kernel` `kernel-drivers` `computer-architecture` `hpc` `mpi` `virtualization`
