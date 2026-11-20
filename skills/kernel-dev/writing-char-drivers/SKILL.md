@@ -158,4 +158,3 @@ Implement `poll` + `wake_up_interruptible` for blocking reads; use `fasync_helpe
 - `skills/kernel-dev/kernel-concurrency` — locking in file ops
 - `skills/kernel-dev/kernel-debugging-advanced` — trace ioctl path
 - `skills/low-level-programming/linux-kernel-modules` — module boilerplate
-- `skills/kernel-dev/rust-for-linux` — the same misc/char device written in Rust

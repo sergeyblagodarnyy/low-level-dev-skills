@@ -232,8 +232,6 @@ Wrap libibverbs with safe abstractions or use `async-rdma` crate for higher-leve
 ## Related skills
 
 - `skills/hpc/mpi` — MPI often uses RDMA under UCX/IB verbs
-- `skills/async-io/dpdk` — alternative userspace networking
 - `skills/allocators/numa-programming` — NUMA-local MR registration
 - `skills/profilers/linux-perf` — CPU-side RDMA completion polling
 - `skills/kernel/device-drivers` — RDMA driver internals
-- `skills/virtualization/qemu-kvm` — SR-IOV VF passthrough for RDMA

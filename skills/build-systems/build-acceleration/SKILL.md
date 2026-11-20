@@ -209,5 +209,4 @@ For ccache configuration options, see [references/ccache-config.md](references/c
 
 - Use `skills/build-systems/cmake` for CMake project structure
 - Use `skills/build-systems/include-what-you-use` for IWYU header pruning
-- Use `skills/rust/rust-build-times` for Rust-specific build acceleration
 - Use `skills/debuggers/dwarf-debug-format` for split-DWARF internals

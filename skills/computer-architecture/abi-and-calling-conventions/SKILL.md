@@ -13,8 +13,8 @@ Document application binary interface (ABI) rules: register roles, stack alignme
 
 - Writing assembly thunks or inline asm clobbers
 - Debugging corrupted stack in mixed C/asm
-- FFI between Rust/C/Zig (`skills/rust/rust-ffi`, `skills/zig/zig-cinterop`)
 - Reading disassembly from `skills/debuggers/gdb`
+- FFI between C and other languages
 
 ## Workflow
 
@@ -34,7 +34,7 @@ Document application binary interface (ABI) rules: register roles, stack alignme
 /* a–f in regs, g on stack */
 ```
 
-Windows x64 differs — see `skills/compilers/msvc-cl`.
+Windows x64 differs.
 
 ### 2. ARM AAPCS (AArch32/AArch64)
 
@@ -107,5 +107,4 @@ objdump -d -M intel ./a.out
 - `skills/low-level-programming/assembly-x86` — x86-64 asm
 - `skills/low-level-programming/assembly-arm` — AAPCS examples
 - `skills/low-level-programming/assembly-riscv` — RISC-V asm
-- `skills/rust/rust-ffi` — `extern "C"` guarantees
 - `skills/binaries/elf-inspection` — symbol and relocation views

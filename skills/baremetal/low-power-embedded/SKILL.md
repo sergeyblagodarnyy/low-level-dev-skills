@@ -93,7 +93,7 @@ Before sleep
 
 ### 7. RTOS note
 
-FreeRTOS `configUSE_TICKLESS_IDLE` maps to WFI/Stop — coordinate with `skills/embedded/freertos`.
+FreeRTOS `configUSE_TICKLESS_IDLE` maps to WFI/Stop.
 
 ### 8. Agent usage
 
@@ -117,4 +117,3 @@ FreeRTOS `configUSE_TICKLESS_IDLE` maps to WFI/Stop — coordinate with `skills/
 - `skills/baremetal/gpio-baremetal` — pin mode for leakage control
 - `skills/baremetal/stm32-baremetal` — RCC and PWR registers
 - `skills/baremetal/timers-pwm-baremetal` — stop timers before sleep
-- `skills/embedded/freertos` — tickless idle integration

@@ -274,6 +274,5 @@ prints `rseq not registered`), which is needed when a library registers its own 
 ## Related skills
 
 - Use `skills/runtimes/sanitizers` — TSan detects data races involving non-atomic accesses
-- Use `skills/rust/rust-sanitizers-miri` for detecting Rust memory ordering violations with Miri
 - Use `skills/low-level-programming/assembly-x86` to understand generated fence instructions
 - Use `skills/debuggers/gdb` for debugging concurrent programs with thread inspection

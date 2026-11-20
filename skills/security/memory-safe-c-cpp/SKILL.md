@@ -43,7 +43,7 @@ Goal?
 ├── Probabilistic detection in production on Arm → MTE (section 5)
 ├── Heap metadata attacks → hardened allocator (section 6)
 ├── Full memory safety, accept slowdown → Fil-C (section 7) or CHERI hardware (section 8)
-└── New component → write it in Rust (skills/rust/rust-ffi for the boundary)
+└── New component → write it in Rust
 ```
 
 ### 2. `-fhardened` and friends (GCC 14+)
@@ -216,4 +216,3 @@ tag, 128 bits on 64-bit systems). Out-of-bounds and forged pointers trap in hard
 - Use `skills/runtimes/sanitizers` for ASan/UBSan/MSan in testing
 - Use `skills/allocators/custom-allocators` for allocator internals
 - Use `skills/compilers/modern-c-cpp-standards` for C23 checked arithmetic and library hardening
-- Use `skills/rust/rust-ffi` for moving components to Rust behind a C ABI

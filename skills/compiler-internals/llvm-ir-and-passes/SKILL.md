@@ -103,4 +103,3 @@ opt -passes='instcombine,simplifycfg' -S foo.ll -o - | diff -u foo.ll -
 - `skills/compiler-internals/llvm-passes` — writing PassPlugins
 - `skills/compiler-internals/compiler-optimizations-deep` — RA and ISel
 - `skills/compiler-internals/compiler-frontend` — IR generation
-- `skills/rust/rustc-basics` — `rustc --emit=llvm-ir`

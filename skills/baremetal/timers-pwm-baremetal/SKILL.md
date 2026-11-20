@@ -73,5 +73,4 @@ Configure channel in `CCMR` as input, set `CCER` polarity, read `CCR` on interru
 ## Related skills
 
 - `skills/baremetal/gpio-baremetal` — timer pin AF
-- `skills/embedded/freertos` — replace SysTick with RTOS tick
 - `skills/baremetal/adc-dac-baremetal` — timer TRGO for ADC trigger

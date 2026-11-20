@@ -326,7 +326,6 @@ Coroutines increase template instantiation and header parsing cost:
 | `-O2` HALO | Reduces generated frame glue |
 | Out-of-line `co_await` in `.cpp` | Cuts recompilation cascade |
 | Pimpl for coroutine return types | Hides `awaitable` templates from headers |
-| `ccache` / modules | See `skills/rust/rust-build-times` patterns for C++ |
 
 Measure with `g++ -ftime-report` or `clang -ftime-trace`. Coroutine-heavy headers (Asio) benefit from unity builds sparingly — balance with RAM use.
 
@@ -344,5 +343,4 @@ Measure with `g++ -ftime-report` or `clang -ftime-trace`. Coroutine-heavy header
 ## Related skills
 
 - Use `skills/compilers/cpp-templates` for other advanced C++20 features
-- Use `skills/rust/rust-async-internals` for Rust's equivalent Future/Poll model
 - Use `skills/debuggers/gdb` for GDB session management

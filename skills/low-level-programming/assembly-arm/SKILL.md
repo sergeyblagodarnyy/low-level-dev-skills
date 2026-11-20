@@ -193,7 +193,7 @@ Apple Matrix coprocessor (AMX) is not exposed via public intrinsics. Access path
 // Low-level: community-documented opcodes — not portable, avoid in production
 ```
 
-Prefer Metal Performance Shaders or Accelerate for matrix workloads on Apple Silicon (`skills/platform/apple-silicon`).
+Prefer Metal Performance Shaders or Accelerate for matrix workloads on Apple Silicon.
 
 ### 10. 16KB page size on Apple M-series
 
@@ -227,4 +227,3 @@ For a register reference, see [references/reference.md](references/reference.md)
 - Use `skills/compilers/cross-gcc` for cross-compilation toolchain
 - Use `skills/debuggers/gdb` for debugging ARM code with gdbserver
 - Use `skills/platform/arm-sve` for SVE/SVE2 scalable vectors
-- Use `skills/platform/apple-silicon` for M-series unified memory and AMX

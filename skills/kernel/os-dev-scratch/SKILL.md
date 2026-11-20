@@ -245,6 +245,5 @@ cd xv6-riscv && make qemu
 - `skills/low-level-programming/assembly-x86` — x86-64 assembly for ISR stubs
 - `skills/low-level-programming/assembly-riscv` — xv6-RISC-V reference ISA
 - `skills/platform/riscv-privileged` — RISC-V trap handling and page tables
-- `skills/virtualization/qemu-kvm` — QEMU flags for kernel development
 - `skills/kernel/kernel-internals` — Linux implementation of these concepts
 - `skills/low-level-programming/linux-kernel-modules` — graduate to Linux once basics work

@@ -179,5 +179,4 @@ For heaptrack_print output reference and GUI usage, see [references/heaptrack-an
 
 - Use `skills/profilers/valgrind` for Memcheck (correctness) and massif (alternative heap profiler)
 - Use `skills/profilers/linux-perf` for CPU profiling alongside memory profiling
-- Use `skills/rust/rust-profiling` for Rust-specific allocation profiling approaches
 - Use `skills/runtimes/sanitizers` — ASan LeakSanitizer for leak detection without profiling overhead

@@ -268,7 +268,6 @@ Rust: use `inkwell` or `llvm-sys` crates for safer bindings.
 
 - `skills/compiler-internals/llvm-passes` — optimize generated IR
 - `skills/compiler-internals/jit-compilation` — execute generated IR
-- `skills/compiler-internals/mlir` — higher-level IR for DSLs
 - `skills/compilers/llvm` — LLVM as a user (opt, llc)
 - `skills/low-level-programming/interpreters` — bytecode VM alternative
 - `skills/languages/carbon-lang` — modern language frontend example

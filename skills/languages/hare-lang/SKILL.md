@@ -231,8 +231,6 @@ Consider C/Zig instead when
 
 ## Related skills
 
-- `skills/zig/zig-compiler` — Zig as alternative systems language
-- `skills/zig/zig-cinterop` — Zig C interop comparison
 - `skills/compilers/gcc` — C toolchain alongside Hare
 - `skills/languages/carbon-lang` — other emerging systems languages
 - `skills/build-systems/make` — integrating Hare into Makefiles

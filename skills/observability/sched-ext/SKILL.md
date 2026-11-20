@@ -301,7 +301,5 @@ one benchmark can lose badly on another.
 ## Related skills
 
 - Use `skills/observability/ebpf` for libbpf, BTF, CO-RE and verifier errors
-- Use `skills/observability/ebpf-rust` for the Rust/Aya side of BPF tooling
 - Use `skills/kernel/kernel-internals` for the default scheduler and run queues
 - Use `skills/profilers/linux-perf` for `perf sched` and latency analysis
-- Use `skills/kernel-dev/qemu-for-kernel-development` for a VM to test schedulers in

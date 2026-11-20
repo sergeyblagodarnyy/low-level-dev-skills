@@ -185,7 +185,6 @@ qemu-aarch64 -cpu max ./saxpy
 
 - `skills/low-level-programming/assembly-arm` — AArch64 assembly and NEON
 - `skills/low-level-programming/simd-intrinsics` — general SIMD concepts
-- `skills/platform/apple-silicon` — Apple M-series specifics
 - `skills/compilers/gcc` — `-march` flags
 - `skills/compilers/clang` — vectorization remarks
 - `skills/low-level-programming/cpu-cache-opt` — memory layout for SIMD

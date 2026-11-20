@@ -7,7 +7,7 @@ description: Deep compiler optimizations skill for RA, ISel, and PGO. Use when e
 
 ## Purpose
 
-Explain optimization phases beyond flags: mid-level IR opts, register allocation, instruction selection/scheduling, vectorization boundaries, PGO, and post-link BOLT — bridging `skills/compilers/pgo` and LLVM/GCC internals.
+Explain optimization phases beyond flags: mid-level IR opts, register allocation, instruction selection/scheduling, vectorization boundaries, PGO, and post-link BOLT.
 
 ## Triggers
 
@@ -60,7 +60,6 @@ clang -fprofile-instr-use=default.profdata -O2 -o app_pgo foo.c
 
 Improves branch layout, inlining, and vectorization thresholds.
 
-See `skills/compilers/pgo` for GCC and BOLT.
 
 ### 5. BOLT (post-link)
 
@@ -94,7 +93,6 @@ Loop-invariant code motion hoists `x * scale` out of inner loop when legal — r
 
 ## Related skills
 
-- `skills/compilers/pgo` — PGO and BOLT detail
 - `skills/compiler-internals/llvm-ir-and-passes` — IR-level opts
 - `skills/compiler-internals/code-generation-and-backends` — ISel and backends
 - `skills/computer-architecture/cpu-pipelines-and-hazards` — scheduling context

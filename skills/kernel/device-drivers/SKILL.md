@@ -272,6 +272,5 @@ module_i2c_driver(my_i2c_driver);
 - `skills/kernel/kernel-internals` — VFS, memory allocators underlying drivers
 - `skills/low-level-programming/linux-kernel-modules` — Kbuild, module loading, signing
 - `skills/kernel/kernel-debugging` — kgdb, ftrace for driver bugs
-- `skills/embedded/zephyr` — embedded RTOS driver model comparison
 - `skills/observability/ebpf` — trace driver events without modifying kernel
 - `skills/kernel/kernel-testing` — KUnit tests for driver logic

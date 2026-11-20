@@ -275,6 +275,5 @@ For linker script anatomy details, see [references/linker-script-anatomy.md](ref
 ## Related skills
 
 - Use `skills/embedded/openocd-jtag` for flashing to addresses defined in linker script
-- Use `skills/embedded/freertos` for FreeRTOS heap placement in specific RAM regions
 - Use `skills/binaries/linkers-lto` for linker LTO and symbol flags
 - Use `skills/binaries/elf-inspection` to inspect section sizes and addresses

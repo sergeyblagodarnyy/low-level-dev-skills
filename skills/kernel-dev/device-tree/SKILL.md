@@ -118,5 +118,4 @@ cat my-overlay.dtbo > /config/device-tree/overlays/my-overlay/dtbo
 - `skills/kernel-dev/platform-device-model` — probe and sysfs
 - `skills/kernel/device-drivers` — `devm_of_iomap`
 - `skills/baremetal/datasheet-and-refmanual-reading` — HW to DT mapping
-- `skills/embedded/zephyr` — Zephyr devicetree (different tooling)
 - `skills/kernel-dev/bus-drivers-i2c-spi` — bus node children

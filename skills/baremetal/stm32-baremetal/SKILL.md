@@ -97,7 +97,7 @@ Bootloader apps often link at `0x08010000` and set `SCB->VTOR = 0x08010000` on e
 
 ### 6. QEMU note
 
-QEMU STM32 machines (`stm32vldiscovery`, `netduinoplus2`, etc.) use **different** MCUs than F407 and omit GPIO/DMA/I2C per [QEMU STM32 docs](https://www.qemu.org/docs/master/system/arm/stm32.html). Use `skills/qemu/qemu-embedded-simulation` for simulation; validate F4 firmware on hardware.
+QEMU STM32 machines (`stm32vldiscovery`, `netduinoplus2`, etc.) use **different** MCUs than F407 and omit GPIO/DMA/I2C per [QEMU STM32 docs](https://www.qemu.org/docs/master/system/arm/stm32.html). Validate F4 firmware on hardware.
 
 ### 7. Agent usage
 

@@ -220,7 +220,6 @@ Poor scaling on multi-socket?
 ## Related skills
 
 - `skills/allocators/custom-allocators` — per-node pool allocators
-- `skills/async-io/dpdk` — `rte_malloc_socket`, NIC NUMA locality
 - `skills/hpc/mpi` — MPI process binding per NUMA node
 - `skills/profilers/hardware-counters` — cache miss measurement
 - `skills/profilers/linux-perf` — perf NUMA events

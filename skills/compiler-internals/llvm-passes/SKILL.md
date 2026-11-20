@@ -235,6 +235,5 @@ OPT_DEBUG=1 opt -passes=my-pass input.ll -o /dev/null
 - `skills/compilers/llvm` — LLVM IR inspection and opt pipeline as user
 - `skills/compiler-internals/compiler-frontend` — IR generation feeding passes
 - `skills/compiler-internals/jit-compilation` — ORC JIT running optimized IR
-- `skills/compiler-internals/mlir` — MLIR passes (similar concepts)
 - `skills/compilers/clang` — Clang optimization flags
 - `skills/build-systems/cmake` — building pass plugins

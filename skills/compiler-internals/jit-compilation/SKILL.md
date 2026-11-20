@@ -226,7 +226,6 @@ JIT backend choice?
 
 - `skills/compiler-internals/llvm-passes` — optimize before JIT
 - `skills/compiler-internals/compiler-frontend` — AST to IR for JIT input
-- `skills/compiler-internals/mlir` — MLIR lowering to LLVM for JIT
 - `skills/compilers/llvm` — LLVM IR fundamentals
 - `skills/low-level-programming/interpreters` — bytecode interpreters using JIT
 - `skills/low-level-programming/assembly-x86` — hand-written asm context

@@ -349,6 +349,4 @@ let module = unsafe { Module::deserialize_file(&engine, "prog.cwasm")? };
 ## Related skills
 
 - Use `skills/runtimes/wasm-emscripten` for compiling C/C++ to WASM for browser/WASI
-- Use `skills/rust/rust-cross` for the `wasm32-wasip1`/`wasip2` Rust targets
-- Use `skills/rust/rust-async-internals` for async patterns in wasmtime Rust embedding
 - Use `skills/runtimes/binary-hardening` for sandboxing considerations with WASM

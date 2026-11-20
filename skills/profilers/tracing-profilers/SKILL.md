@@ -212,4 +212,3 @@ Open `.tracy` files, or connect live, with the `tracy-profiler` GUI (`cmake -S p
 - Use `skills/profilers/linux-perf` for sampling profiles and hardware counters
 - Use `skills/profilers/flamegraphs` for aggregated CPU time views
 - Use `skills/debuggers/concurrency-debugging` when the timeline shows lock contention
-- Use `skills/gpu/cuda-profiling` for GPU timelines with Nsight Systems

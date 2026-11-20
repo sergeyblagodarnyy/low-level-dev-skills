@@ -2,10 +2,6 @@ const skills = [
   // allocators
   { name: "custom-allocators", category: "allocators", desc: "Guide agents through memory allocator design and tuning: pool/slab/arena/buddy taxonomy, jemalloc internals and MALLOC_CONF, mimalloc des..." },
   { name: "numa-programming", category: "allocators", desc: "Guide agents through NUMA-aware programming: topology detection with numactl and sysfs, libnuma API (numa_alloc_onnode, mbind, set_mempol..." },
-  // async-io
-  { name: "af-xdp", category: "async-io", desc: "Guide agents through AF_XDP sockets for high-performance packet I/O: socket creation, UMEM setup, fill/completion/RX/TX rings, XDP progra..." },
-  { name: "dpdk", category: "async-io", desc: "Guide agents through DPDK (Data Plane Development Kit): EAL initialization, poll-mode driver (PMD) concepts, rte_eth_rx_burst/tx_burst, m..." },
-  { name: "io-uring", category: "async-io", desc: "Guide agents through Linux io_uring: the submission/completion queue model (SQE/CQE), liburing API, multi-shot accept/recv, provided buff..." },
   // baremetal
   { name: "adc-dac-baremetal", category: "baremetal", desc: "Configure ADC and DAC peripherals: channel selection, sampling times, calibration sequences, DMA circular buffers, and DAC static/dynamic..." },
   { name: "baremetal-startup", category: "baremetal", desc: "Guide agents through bare-metal startup from reset to main(): reset and exception vectors, .data/.bss initialization, stack and heap setu..." },
@@ -27,13 +23,10 @@ const skills = [
   { name: "elf-inspection", category: "binaries", desc: "Guide agents through inspecting Linux ELF binaries: symbol tables, section layout, dynamic linking, debug info, and diagnosing linker err..." },
   { name: "linkers-lto", category: "binaries", desc: "Guide agents through linker selection, common linker flags, link-order issues, LTO setup, and symbol-visibility management." },
   // build-systems
-  { name: "bazel", category: "build-systems", desc: "Guide agents through Bazel for C/C++ projects: writing BUILD files, cc_library/cc_binary rules, toolchain registration, remote execution,..." },
   { name: "build-acceleration", category: "build-systems", desc: "Guide agents through reducing C/C++ build times using caching (ccache/sccache), distributed compilation (distcc), unity/jumbo builds, pre..." },
   { name: "cmake", category: "build-systems", desc: "Guide agents through modern (target-first) CMake for C/C++ projects: out-of-source builds, dependency management, generator selection, an..." },
-  { name: "conan-vcpkg", category: "build-systems", desc: "Guide agents through C/C++ dependency management with Conan and vcpkg: declaring dependencies, integrating with CMake, managing binary co..." },
   { name: "include-what-you-use", category: "build-systems", desc: "Guide agents through using IWYU to reduce unnecessary #include directives, interpret IWYU reports and mapping files, decide between forwa..." },
   { name: "make", category: "build-systems", desc: "Guide agents through idiomatic Makefile patterns for C/C++ projects: phony targets, pattern rules, automatic dependency generation, and c..." },
-  { name: "meson", category: "build-systems", desc: "Guide agents through Meson project setup, build configuration, the wrap dependency system, and cross-compilation \u2014 covering the build sys..." },
   { name: "ninja", category: "build-systems", desc: "Guide agents through Ninja as a build executor: diagnosing failures, controlling parallelism, generating from CMake, and understanding th..." },
   { name: "static-analysis", category: "build-systems", desc: "Guide agents through selecting, running, and triaging static analysis tools for C/C++ \u2014 clang-tidy, cppcheck, and scan-build \u2014 including ..." },
   // compiler-internals
@@ -43,7 +36,6 @@ const skills = [
   { name: "jit-compilation", category: "compiler-internals", desc: "Guide agents through just-in-time compilation: LLVM ORC JIT v2 (ExecutionSession, IRLayer, ObjectLayer), LLJIT for simpler use cases, Cra..." },
   { name: "llvm-ir-and-passes", category: "compiler-internals", desc: "Teach agents to read and reason about LLVM IR (SSA, types, terminators), navigate the standard pass pipeline, and use opt/llvm-dis for in..." },
   { name: "llvm-passes", category: "compiler-internals", desc: "Guide agents through writing LLVM optimization passes with the New Pass Manager: FunctionPass and ModulePass structure, PassPluginLibrary..." },
-  { name: "mlir", category: "compiler-internals", desc: "Guide agents through MLIR (Multi-Level IR): ops, regions, blocks, and values; built-in dialects (arith, func, memref, affine, linalg); wr..." },
   // compilers
   { name: "clang", category: "compilers", desc: "Guide agents through Clang-specific features: superior diagnostics, sanitizer integration, optimization remarks, static analysis, and LLV..." },
   { name: "cpp-modules", category: "compilers", desc: "Guide agents through authoring, building, and debugging C++20 modules: named modules vs header units, module partitions, CMake integratio..." },
@@ -52,8 +44,6 @@ const skills = [
   { name: "gcc", category: "compilers", desc: "Guide agents through GCC invocation: flag selection, build modes, warning triage, PGO, LTO, and common error patterns. Assume the project..." },
   { name: "llvm", category: "compilers", desc: "Guide agents through LLVM as a user: generating and inspecting IR, running existing optimisation passes with opt, lowering to assembly wi..." },
   { name: "modern-c-cpp-standards", category: "compilers", desc: "Guide agents through current C and C++ standards: changed GCC defaults (C23, C++20), C23 and C2y features, C++26 reflection and contr..." },
-  { name: "msvc-cl", category: "compilers", desc: "Guide agents through Windows C/C++ compilation: MSVC cl.exe, clang-cl as MSVC-compatible driver, MSBuild project settings, and runtime li..." },
-  { name: "pgo", category: "compilers", desc: "Guide agents through the full PGO workflow: instrument build \u2192 representative workload \u2192 collect profile \u2192 optimised build, covering both..." },
   // computer-architecture
   { name: "abi-and-calling-conventions", category: "computer-architecture", desc: "Document application binary interface (ABI) rules: register roles, stack alignment, argument passing, return values, and variadic convent..." },
   { name: "branch-prediction-and-speculation", category: "computer-architecture", desc: "Explain how modern CPUs predict branches, execute speculatively, recover on mispredict, and why speculation created side channels (Spectr..." },
@@ -68,19 +58,8 @@ const skills = [
   { name: "gdb", category: "debuggers", desc: "Walk agents through GDB sessions from first launch to advanced workflows: crash diagnosis, reverse debugging, remote debugging, and multi..." },
   { name: "lldb", category: "debuggers", desc: "Guide agents through LLDB sessions and map existing GDB knowledge to LLDB. Covers command differences, Apple specifics, Python scripting,..." },
   // embedded
-  { name: "embedded-rust", category: "embedded", desc: "Guide agents through embedded Rust development: flashing and debugging with probe-rs/cargo-embed, structured logging with defmt, the RTIC..." },
-  { name: "freertos", category: "embedded", desc: "Guide agents through FreeRTOS application development: task creation and priorities, inter-task communication with queues and semaphores,..." },
   { name: "linker-scripts", category: "embedded", desc: "Guide agents through writing and modifying GNU ld linker scripts for embedded targets: MEMORY and SECTIONS commands, VMA vs LMA for code ..." },
   { name: "openocd-jtag", category: "embedded", desc: "Guide agents through configuring OpenOCD for JTAG and SWD targets, flashing firmware to microcontrollers, attaching GDB for bare-metal de..." },
-  { name: "zephyr", category: "embedded", desc: "Guide agents through Zephyr application development: west build workflow, board configuration, Kconfig and devicetree, Zephyr shell and l..." },
-  // gpu
-  { name: "cuda", category: "gpu", desc: "Guide agents through NVIDIA CUDA C/C++ development: kernel launch configuration, the memory hierarchy from registers through global memor..." },
-  { name: "cuda-debugging", category: "gpu", desc: "Guide agents through debugging CUDA programs with cuda-gdb for interactive GPU thread inspection, NVIDIA Compute Sanitizer for automated ..." },
-  { name: "cuda-profiling", category: "gpu", desc: "Guide agents through profiling CUDA applications with Nsight Systems (timeline-level) and Nsight Compute (kernel-level metrics), using th..." },
-  { name: "cuda-tile", category: "gpu", desc: "Guide agents through NVIDIA's tile programming model: cuTile Python kernels (ct.load/ct.store/ct.mma), CUDA Tile C++ with nvcc --enable-..." },
-  { name: "gpu-memory-model", category: "gpu", desc: "Explain the GPU execution and memory model for agents optimizing kernels: SIMT execution, warp (32) vs wavefront (64) divergence costs, g..." },
-  { name: "hip-rocm", category: "gpu", desc: "Guide agents through AMD GPU programming with HIP: the HIP runtime API, hipcc compilation, porting CUDA code with HIPIFY (hipify-perl, hi..." },
-  { name: "triton-lang", category: "gpu", desc: "Guide agents through writing GPU kernels in OpenAI Triton: the @triton.jit decorator, block-oriented tl.load/tl.store with masking, atomi..." },
   // hpc
   { name: "mpi", category: "hpc", desc: "Guide agents through MPI (Message Passing Interface) programming: point-to-point and collective communication, non-blocking operations, s..." },
   { name: "openmp", category: "hpc", desc: "Guide agents through OpenMP shared-memory parallelism: #pragma omp parallel for with scheduling clauses, reductions, data-sharing attribu..." },
@@ -99,8 +78,6 @@ const skills = [
   { name: "kernel-memory-management", category: "kernel-dev", desc: "Guide agents through Linux kernel memory allocation: physical page allocator (buddy), SLUB kmalloc caches, vmalloc virtual mappings, zone..." },
   { name: "linux-kernel-architecture", category: "kernel-dev", desc: "Provide a mental map of the Linux kernel: boot sequence, major subsystems, key data structures, and where to look in source \u2014 complementi..." },
   { name: "platform-device-model", category: "kernel-dev", desc: "Explain the Linux driver model for platform (and similar) buses: struct device, device_driver, probe/remove, resource acquisition, sysfs,..." },
-  { name: "qemu-for-kernel-development", category: "kernel-dev", desc: "Guide agents through QEMU-based kernel and driver development workflows: building/booting custom kernels, attaching virtio block/network,..." },
-  { name: "rust-for-linux", category: "kernel-dev", desc: "Guide agents through writing Linux kernel code in Rust: toolchain setup and rustavailable, the module! macro, pin-init for locks and re..." },
   { name: "writing-char-drivers", category: "kernel-dev", desc: "Guide agents through Linux character device implementation: struct file_operations, cdev registration, safe userspace copies, ioctl desig..." },
   // languages
   { name: "carbon-lang", category: "languages", desc: "Guide agents through the Carbon programming language: syntax fundamentals, bidirectional C++ interoperability via Carbon.h, building from..." },
@@ -118,10 +95,8 @@ const skills = [
   { name: "simd-intrinsics", category: "low-level-programming", desc: "Guide agents through SIMD: reading auto-vectorization output, writing SSE2/AVX2/NEON intrinsics, runtime CPU feature detection, and choos..." },
   // observability
   { name: "ebpf", category: "observability", desc: "Guide agents through writing, loading, and debugging eBPF programs using libbpf, bpftrace, and bpftool. Covers map types, program types, ..." },
-  { name: "ebpf-rust", category: "observability", desc: "Guide agents through building production eBPF programs in Rust using the Aya framework: writing kernel-side BPF code with aya-bpf, struct..." },
   { name: "sched-ext", category: "observability", desc: "Guide agents through sched_ext: enabling CONFIG_SCHED_CLASS_EXT, running scx schedulers (scx_lavd, scx_bpfland), writing a BPF schedu..." },
   // platform
-  { name: "apple-silicon", category: "platform", desc: "Guide agents through Apple Silicon (M-series) development: unified memory architecture, AMX matrix coprocessor access via Accelerate, Met..." },
   { name: "arm-sve", category: "platform", desc: "Guide agents through ARM Scalable Vector Extension (SVE/SVE2) programming: vector-length agnostic (VLA) code, predicate registers, SVE in..." },
   { name: "riscv-privileged", category: "platform", desc: "Guide agents through the RISC-V privileged specification: M/S/U privilege modes, CSR registers, trap handling, PLIC and CLINT interrupt c..." },
   // profilers
@@ -133,11 +108,6 @@ const skills = [
   { name: "strace-ltrace", category: "profilers", desc: "Guide agents through tracing system calls with strace and library calls with ltrace \u2014 the most effective tools for diagnosing incorrect b..." },
   { name: "tracing-profilers", category: "profilers", desc: "Guide agents through instrumentation tracing with Perfetto and Tracy: track events and zones, recording traces, SQL analysis with trac..." },
   { name: "valgrind", category: "profilers", desc: "Guide agents through Valgrind tools: Memcheck for memory errors, Cachegrind for cache simulation, Callgrind for call graphs, and Massif f..." },
-  // qemu
-  { name: "protocol-analysis", category: "qemu", desc: "Guide agents through software-side serial bus analysis: logic analyzer workflow, sigrok/PulseView decoding, correlating captures with fir..." },
-  { name: "qemu-embedded-simulation", category: "qemu", desc: "Guide agents through QEMU for bare-metal and RTOS firmware: machine selection, loading ELF images, semihosting, peripheral models, and GD..." },
-  { name: "resource-optimization-lowend", category: "qemu", desc: "Guide agents through flash and RAM optimization on constrained devices: compiler size flags, linker map analysis, stack usage measurement..." },
-  { name: "verilog-basics-for-lowlevel", category: "qemu", desc: "Give firmware and kernel engineers enough Verilog/SystemVerilog literacy to read RTL: modules, clocks/resets, combinational vs sequential..." },
   // runtimes
   { name: "binary-hardening", category: "runtimes", desc: "Guide agents through enabling and verifying binary security mitigations: checksec analysis, compiler and linker hardening flags (RELRO, P..." },
   { name: "formal-verification", category: "runtimes", desc: "Guide agents through formal verification of Rust and C: Kani proof harnesses and contracts, CBMC bounded model checking, Frama-C WP an..." },
@@ -145,19 +115,6 @@ const skills = [
   { name: "sanitizers", category: "runtimes", desc: "Guide agents through choosing, enabling, and interpreting compiler runtime sanitizers for finding memory errors, undefined behaviour, dat..." },
   { name: "wasm-emscripten", category: "runtimes", desc: "Guide agents through compiling C/C++ to WebAssembly using Emscripten: emcc flag selection, function exports, memory model configuration, ..." },
   { name: "wasm-wasmtime", category: "runtimes", desc: "Guide agents through wasmtime: running WASM modules from the CLI, WASI APIs, the component model with WIT interfaces, embedding wasmtime ..." },
-  // rust
-  { name: "cargo-workflows", category: "rust", desc: "Guide agents through Cargo workspaces, feature management, build scripts (build.rs), CI integration, incremental compilation, and the Car..." },
-  { name: "rust-async-internals", category: "rust", desc: "Guide agents through Rust async/await internals: the Future trait and poll loop, Pin/Unpin for self-referential types, tokio's task model..." },
-  { name: "rust-build-times", category: "rust", desc: "Guide agents through diagnosing and improving Rust compilation speed: cargo-timings for build profiling, sccache for caching, the Craneli..." },
-  { name: "rust-cross", category: "rust", desc: "Guide agents through Rust cross-compilation: adding rustup targets, using cross for hermetic Docker-based cross-builds, cargo-zigbuild fo..." },
-  { name: "rust-debugging", category: "rust", desc: "Guide agents through debugging Rust programs: GDB/LLDB with Rust pretty-printers, backtrace configuration, panic triage, async debugging ..." },
-  { name: "rust-ffi", category: "rust", desc: "Guide agents through Rust's Foreign Function Interface: calling C from Rust with bindgen, exporting Rust to C with cbindgen, writing safe..." },
-  { name: "rust-no-std", category: "rust", desc: "Guide agents through #![no_std] Rust development: what core and alloc provide vs std, implementing custom global allocators, panic handle..." },
-  { name: "rust-profiling", category: "rust", desc: "Guide agents through Rust performance profiling: flamegraphs via cargo-flamegraph, binary size analysis, monomorphization bloat measureme..." },
-  { name: "rust-sanitizers-miri", category: "rust", desc: "Guide agents through runtime safety validation for Rust: ASan/TSan/MSan/UBSan via RUSTFLAGS, Miri for compile-time UB detection in unsafe..." },
-  { name: "rust-security", category: "rust", desc: "Guide agents through Rust security practices: dependency auditing with cargo-audit, policy enforcement with cargo-deny, RUSTSEC advisory ..." },
-  { name: "rust-unsafe", category: "rust", desc: "Guide agents through writing, reviewing, and reasoning about unsafe Rust: what operations require unsafe, how to write safe abstractions,..." },
-  { name: "rustc-basics", category: "rust", desc: "Guide agents through Rust compiler invocation: RUSTFLAGS, Cargo profile configuration, build modes, MIR and assembly inspection, monomorp..." },
   // security
   { name: "kernel-security", category: "security", desc: "Guide agents through Linux kernel security: LSM frameworks (SELinux, AppArmor), seccomp-bpf with libseccomp, KASLR and bypass mitigations..." },
   { name: "memory-safe-c-cpp", category: "security", desc: "Guide agents through making existing C and C++ safer: -fhardened and FORTIFY, counted_by bounds checks, library hardening, Arm MTE,..." },
@@ -165,15 +122,6 @@ const skills = [
   // virtualization
   { name: "containers-internals", category: "virtualization", desc: "Guide agents through Linux container internals: namespaces (clone, unshare, nsenter), cgroups v2 resource limits, overlayfs storage, runc..." },
   { name: "hypervisor-internals", category: "virtualization", desc: "Explain hardware virtualization internals for agents: Intel VT-x (VMXON, VMCS, VMLAUNCH/VMRESUME, VMEXIT reasons), AMD SVM (VMCB, #VMEXIT..." },
-  { name: "qemu-kvm", category: "virtualization", desc: "Guide agents through QEMU system emulation and KVM acceleration: key qemu-system-x86_64 flags, virtio devices, VFIO device passthrough, Q..." },
-  // zig
-  { name: "zig-build-system", category: "zig", desc: "Guide agents through writing build.zig files: executables, libraries, C source integration, build options, test configuration, and build...." },
-  { name: "zig-cinterop", category: "zig", desc: "Guide agents through Zig's C interoperability: @cImport/@cInclude for calling C, translate-c for header inspection, extern struct and pac..." },
-  { name: "zig-compiler", category: "zig", desc: "Guide agents through Zig compiler invocation: optimization modes, output types, zig cc as a C compiler drop-in, error message interpretat..." },
-  { name: "zig-comptime", category: "zig", desc: "Guide agents through Zig's comptime system: compile-time function evaluation, comptime type parameters, generics via anytype, type reflec..." },
-  { name: "zig-cross", category: "zig", desc: "Guide agents through Zig's built-in cross-compilation: target triple selection, CPU feature targeting, zig cc for cross-compiling C proje..." },
-  { name: "zig-debugging", category: "zig", desc: "Guide agents through debugging Zig programs: GDB/LLDB sessions, interpreting Zig panics and error return traces, std.debug.print logging,..." },
-  { name: "zig-testing", category: "zig", desc: "Guide agents through Zig's testing system: zig build test and zig test, comptime testing patterns, test filters, the test allocator for l..." },
 ];
 
 function skillPath(skill) {
@@ -337,7 +285,7 @@ const steps = [
 const treeStructure = `<span class="dir">low-level-dev-skills/</span>
 ├── <span class="file">README.md</span>
 ├── <span class="file">AGENTS.md</span>
-└── <span class="dir">skills/</span>    <span class="comment"># 150 skills across 25 categories</span>
+└── <span class="dir">skills/</span>    <span class="comment"># 103 skills across 20 categories</span>
     ├── <span class="dir">allocators/</span>  <span class="comment"># custom-allocators numa-programming</span>
     ├── <span class="dir">async-io/</span>  <span class="comment"># af-xdp dpdk io-uring</span>
     ├── <span class="dir">baremetal/</span>  <span class="comment"># adc-dac-baremetal baremetal-startup bootloaders-embedded datasheet-and-refmanual-reading dma-baremetal gpio-baremetal +8 more</span>

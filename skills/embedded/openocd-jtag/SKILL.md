@@ -202,7 +202,5 @@ arm-none-eabi-gdb -ex "target remote :3333" firmware.elf
 
 ## Related skills
 
-- Use `skills/embedded/freertos` for FreeRTOS-aware debugging with OpenOCD
-- Use `skills/embedded/zephyr` for Zephyr's `west debug` integration
 - Use `skills/debuggers/gdb` for GDB session management
 - Use `skills/embedded/linker-scripts` for understanding memory map for flash addresses

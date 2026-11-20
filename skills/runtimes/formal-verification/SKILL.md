@@ -349,6 +349,4 @@ Comments inside a `//@` annotation are a parse error (`unexpected block-comment 
 ## Related skills
 
 - Use `skills/runtimes/fuzzing` for finding bugs with libFuzzer/AFL and cargo-fuzz
-- Use `skills/rust/rust-sanitizers-miri` for Miri and sanitizers on Rust code
-- Use `skills/rust/rust-unsafe` for the invariants Kani checks in `unsafe` code
 - Use `skills/build-systems/static-analysis` for clang-tidy, cppcheck and other analyzers

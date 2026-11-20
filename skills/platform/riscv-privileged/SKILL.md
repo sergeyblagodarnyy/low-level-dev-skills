@@ -234,8 +234,6 @@ make qemu
 
 - `skills/low-level-programming/assembly-riscv` — RV32/RV64 ISA and psABI
 - `skills/kernel/os-dev-scratch` — OS dev concepts (x86 parallel)
-- `skills/virtualization/qemu-kvm` — QEMU usage patterns
-- `skills/embedded/zephyr` — Zephyr on RISC-V
 - `skills/kernel/kernel-internals` — Linux VM and scheduler analogies
 - `skills/platform/arm-sve` — other architecture platform skills
 - Use `skills/low-level-programming/riscv-vector` for the vector extension that RVA23 makes mandatory

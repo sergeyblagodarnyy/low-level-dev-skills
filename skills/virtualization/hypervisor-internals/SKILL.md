@@ -186,7 +186,6 @@ ioctl(vcpu, KVM_RUN, 0);  // runs until VMEXIT
 
 ## Related skills
 
-- `skills/virtualization/qemu-kvm` — practical KVM/QEMU usage
 - `skills/virtualization/containers-internals` — lighter isolation without full VM
 - `skills/kernel/kernel-internals` — host kernel scheduler/memory
 - `skills/kernel/os-dev-scratch` — guest OS development context
