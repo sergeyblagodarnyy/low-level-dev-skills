@@ -324,8 +324,6 @@ kunit_test_suite(mymod_suite);
 # Out-of-tree: enable CONFIG_KUNIT in test kernel or use kunit module target
 ```
 
-See `skills/kernel/kernel-testing` for full KUnit, kselftest, and syzkaller workflows.
-
 ### 9. Rust kernel modules (kernel 6.x + CONFIG_RUST=y)
 
 Requires kernel built with `CONFIG_RUST=y` and appropriate Rust toolchain pinned by the kernel tree.
@@ -390,9 +388,7 @@ For Kbuild system details, see [references/kbuild-basics.md](references/kbuild-b
 
 ## Related skills
 
-- Use `skills/kernel/kernel-testing` for KUnit and kselftest harnesses
 - Use `skills/kernel/device-drivers` for char/platform driver patterns beyond minimal modules
 - Use `skills/kernel/kernel-debugging` for kgdb, ftrace, and kprobes
-- Use `skills/observability/ebpf` for userspace kernel tracing without modules
 - Use `skills/debuggers/gdb` for GDB session management with KGDB
 - Use `skills/binaries/elf-inspection` for inspecting module ELF structure

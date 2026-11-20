@@ -1,6 +1,6 @@
 # low-level-dev-skills
 
-A curated suite of AI agent skills for systems and low-level programming — C/C++, bare-metal firmware, Linux kernel/driver development, computer architecture, compiler internals, HPC, and more. These skills provide expert guidance for compilers, debuggers, profilers, build systems, sanitizers, low-level programming, embedded development, observability, virtualization, and security.
+A curated suite of AI agent skills for systems and low-level programming — C/C++, bare-metal firmware, Linux kernel/driver development, computer architecture, compiler internals, and more. These skills provide expert guidance for compilers, debuggers, profilers, build systems, sanitizers, low-level programming, embedded development, observability, virtualization, and security.
 
 **[View on skills.sh](https://skills.sh/mohitmishra786/low-level-dev-skills)**
 
@@ -30,7 +30,7 @@ Install specific skill bundles using the `--skill` flag (space-separated list):
 
 ```bash
 # C/C++ toolchain (compilers, debuggers, build systems, profilers)
-npx skills add mohitmishra786/low-level-dev-skills --skill gcc clang llvm cross-gcc cmake make ninja static-analysis gdb lldb core-dumps linux-perf valgrind flamegraphs strace-ltrace heaptrack sanitizers fuzzing elf-inspection linkers-lto binutils dynamic-linking assembly-x86 assembly-arm simd-intrinsics memory-model cpu-cache-opt modern-c-cpp-standards formal-verification tracing-profilers
+npx skills add mohitmishra786/low-level-dev-skills --skill gcc clang llvm cross-gcc cmake make ninja static-analysis gdb lldb core-dumps linux-perf valgrind flamegraphs strace-ltrace heaptrack sanitizers fuzzing elf-inspection linkers-lto binutils dynamic-linking assembly-x86 assembly-arm simd-intrinsics memory-model cpu-cache-opt formal-verification tracing-profilers
 
 # Embedded (RTOS, OpenOCD, linker scripts, bare-metal)
 npx skills add mohitmishra786/low-level-dev-skills --skill openocd-jtag linker-scripts baremetal-startup mmio-and-bit-manipulation interrupts-and-exceptions-baremetal gpio-baremetal uart-serial-baremetal spi-i2c-baremetal dma-baremetal stm32-baremetal low-power-embedded
@@ -44,8 +44,8 @@ npx skills add mohitmishra786/low-level-dev-skills --skill linux-kernel-architec
 # Computer architecture
 npx skills add mohitmishra786/low-level-dev-skills --skill cpu-pipelines-and-hazards memory-hierarchy-and-caches virtual-memory-paging-and-tlb abi-and-calling-conventions branch-prediction-and-speculation
 
-# Observability (eBPF, binary hardening)
-npx skills add mohitmishra786/low-level-dev-skills --skill ebpf binary-hardening sched-ext
+# Binary hardening
+npx skills add mohitmishra786/low-level-dev-skills --skill binary-hardening
 
 # The core essentials (compiler + debugger + profiler for all languages)
 npx skills add mohitmishra786/low-level-dev-skills --skill gcc clang gdb lldb linux-perf cmake
@@ -54,7 +54,7 @@ npx skills add mohitmishra786/low-level-dev-skills --skill gcc clang gdb lldb li
 npx skills add mohitmishra786/low-level-dev-skills --skill cmake make ninja static-analysis build-acceleration include-what-you-use
 
 # Profilers and performance tools
-npx skills add mohitmishra786/low-level-dev-skills --skill linux-perf valgrind flamegraphs strace-ltrace heaptrack intel-vtune-amd-uprof hardware-counters
+npx skills add mohitmishra786/low-level-dev-skills --skill linux-perf valgrind flamegraphs strace-ltrace heaptrack hardware-counters
 
 # Runtime safety (sanitizers, fuzzing, Miri, binary hardening)
 npx skills add mohitmishra786/low-level-dev-skills --skill sanitizers fuzzing binary-hardening
@@ -63,19 +63,13 @@ npx skills add mohitmishra786/low-level-dev-skills --skill sanitizers fuzzing bi
 npx skills add mohitmishra786/low-level-dev-skills --skill elf-inspection linkers-lto binutils dynamic-linking dwarf-debug-format
 
 # Kernel internals and drivers
-npx skills add mohitmishra786/low-level-dev-skills --skill kernel-internals device-drivers kernel-debugging kernel-testing
+npx skills add mohitmishra786/low-level-dev-skills --skill kernel-internals device-drivers kernel-debugging
 
 # Allocators and NUMA
 npx skills add mohitmishra786/low-level-dev-skills --skill custom-allocators
 
 # Compiler internals (frontend, IR, passes, codegen, MLIR, JIT)
 npx skills add mohitmishra786/low-level-dev-skills --skill compiler-optimizations-deep
-
-# Virtualization
-npx skills add mohitmishra786/low-level-dev-skills --skill containers-internals
-
-# HPC and parallel programming
-npx skills add mohitmishra786/low-level-dev-skills --skill openmp
 
 # Security and reverse engineering
 npx skills add mohitmishra786/low-level-dev-skills --skill memory-safe-c-cpp
@@ -131,9 +125,8 @@ After installation, invoke skills in your AI agent:
 /cpu-pipelines-and-hazards Break a RAW hazard in this hot loop
 ```
 
-### Observability and security
+### Security
 ```
-/ebpf Write a bpftrace one-liner to trace system calls
 /binary-hardening Check my binary with checksec
 ```
 
@@ -144,7 +137,6 @@ After installation, invoke skills in your AI agent:
 /sanitizers Which sanitizer should I use for memory leaks?
 /valgrind How do I suppress known false positives?
 /heaptrack Find allocation hotspots in my C++ server
-/intel-vtune-amd-uprof Analyze pipeline stalls in my hot function
 /hardware-counters Measure cache miss rate with perf stat
 ```
 
@@ -155,11 +147,6 @@ After installation, invoke skills in your AI agent:
 /dwarf-debug-format Set up debuginfod for automatic symbols
 ```
 
-### HPC
-```
-/openmp Parallelize this loop with a dynamic schedule
-```
-
 ### Kernel and systems
 ```
 /kernel-internals Interpret /proc/meminfo during memory pressure
@@ -168,7 +155,7 @@ After installation, invoke skills in your AI agent:
 
 ## Skills
 
-### C/C++ Compilers (7 skills)
+### C/C++ Compilers (6 skills)
 
 | Skill | Purpose |
 |-------|---------|
@@ -178,7 +165,6 @@ After installation, invoke skills in your AI agent:
 | `cross-gcc` | Cross-compilation triplets, sysroots, embedded targets |
 | `cpp-modules` | C++20 modules: named modules, header units, CMake integration |
 | `cpp-templates` | Template error reading, concepts, requires-clauses, Templight |
-| `modern-c-cpp-standards` | C23/C2y features, GCC 15/16 default changes, C++26 reflection and contracts, hardening |
 
 ### Debuggers (6 skills)
 
@@ -191,7 +177,7 @@ After installation, invoke skills in your AI agent:
 | `debug-optimized-builds` | RelWithDebInfo, -Og, inlined frames, "value optimized out" |
 | `dwarf-debug-format` | DWARF sections, dwarfdump, split DWARF, debuginfod |
 
-### Profilers (8 skills)
+### Profilers (7 skills)
 
 | Skill | Purpose |
 |-------|---------|
@@ -200,7 +186,6 @@ After installation, invoke skills in your AI agent:
 | `flamegraphs` | perf-to-SVG pipeline, reading frames |
 | `strace-ltrace` | Syscall and library call tracing, ENOENT/EPERM triage |
 | `heaptrack` | Heap allocation profiling, leak detection, hotspots |
-| `intel-vtune-amd-uprof` | VTune hotspots, microarchitecture analysis, roofline model |
 | `hardware-counters` | perf stat -e, PAPI, cache miss rates, IPC analysis |
 | `tracing-profilers` | Perfetto SDK + trace processor SQL, Tracy zones and headless capture |
 
@@ -244,13 +229,6 @@ After installation, invoke skills in your AI agent:
 | `cpu-cache-opt` | Cache misses, AoS vs SoA, false sharing, prefetching |
 | `cpp-coroutines` | co_await/co_yield/co_return, promise_type, frame layout, GDB |
 | `linux-kernel-modules` | LKMs, Kbuild, /proc, sysfs, char devices, KGDB |
-
-### Observability (2 skills)
-
-| Skill | Purpose |
-|-------|---------|
-| `ebpf` | bpftool, libbpf, bpftrace, verifier errors, XDP, CO-RE |
-| `sched-ext` | BPF CPU schedulers: CONFIG_SCHED_CLASS_EXT, scx schedulers, DSQs, writing and debugging a scheduler |
 
 ### Embedded (2 skills)
 
@@ -301,14 +279,13 @@ After installation, invoke skills in your AI agent:
 | `abi-and-calling-conventions` | SysV AMD64, AAPCS, RISC-V psABI, stack frames |
 | `branch-prediction-and-speculation` | Predictors, mispredict, Spectre/Meltdown awareness |
 
-### Kernel Internals (4 skills)
+### Kernel Internals (3 skills)
 
 | Skill | Purpose |
 |-------|---------|
 | `kernel-internals` | Scheduler, buddy/SLUB, VFS, page cache, OOM killer |
 | `device-drivers` | platform/i2c/spi drivers, IRQ, DMA, regmap, udev |
 | `kernel-debugging` | kgdb, kdb, ftrace, kprobes, dyndbg, crash dumps |
-| `kernel-testing` | KUnit, kselftest, syzkaller, LTP, KernelCI |
 
 ### Allocators (1 skills)
 
@@ -322,25 +299,13 @@ After installation, invoke skills in your AI agent:
 |-------|---------|
 | `compiler-optimizations-deep` | RA, vectorization, PGO, BOLT, LICM depth |
 
-### Virtualization (1 skills)
-
-| Skill | Purpose |
-|-------|---------|
-| `containers-internals` | namespaces, cgroups v2, overlayfs, runc, seccomp |
-
 ### Security (1 skills)
 
 | Skill | Purpose |
 |-------|---------|
 | `memory-safe-c-cpp` | -fhardened, FORTIFY, counted_by, auto-var-init, MTE, hardened allocators, Fil-C, CHERI |
 
-### HPC (1 skill)
-
-| Skill | Purpose |
-|-------|---------|
-| `openmp` | Parallel for, reductions, SIMD, task parallelism, GPU offload |
-
-**Total: 82 skills**
+**Total: 75 skills**
 
 ## Design
 
@@ -360,4 +325,4 @@ Contributions are welcome! To add or improve a skill:
 
 ## Topics
 
-`ai-agent-skills` `low-level-programming` `c-cpp-toolchain` `systems-programming` `compilers` `debuggers` `profilers` `build-systems` `embedded` `bare-metal` `cross-compilation` `ebpf` `linux-kernel` `kernel-drivers` `computer-architecture` `hpc` `virtualization`
+`ai-agent-skills` `low-level-programming` `c-cpp-toolchain` `systems-programming` `compilers` `debuggers` `profilers` `build-systems` `embedded` `bare-metal` `cross-compilation` `linux-kernel` `kernel-drivers` `computer-architecture`

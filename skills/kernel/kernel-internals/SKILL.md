@@ -218,7 +218,4 @@ echo -1000 | sudo tee /proc/<pid>/oom_score_adj
 - `skills/kernel/device-drivers` — char/platform drivers using these subsystems
 - `skills/kernel/kernel-debugging` — ftrace, kgdb for internals investigation
 - `skills/low-level-programming/linux-kernel-modules` — LKM development basics
-- `skills/kernel/kernel-testing` — KUnit for subsystem unit tests
 - `skills/profilers/linux-perf` — perf sched and memory profiling
-- `skills/observability/ebpf` — trace scheduler and memory events from userspace
-- Use `skills/observability/sched-ext` to replace the scheduling policy with a BPF scheduler

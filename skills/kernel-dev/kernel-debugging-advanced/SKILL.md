@@ -114,6 +114,5 @@ crash> dev -s
 
 - `skills/kernel/kernel-debugging` — baseline kgdb, dyndbg
 - `skills/profilers/linux-perf` — perf record/report
-- `skills/observability/ebpf` — BPF kprobe alternative
 - `skills/kernel-dev/writing-char-drivers` — ioctl trace targets
 - `skills/debuggers/core-dumps` — userspace core parallels

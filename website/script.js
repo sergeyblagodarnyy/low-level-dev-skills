@@ -37,7 +37,6 @@ const skills = [
   { name: "cross-gcc", category: "compilers", desc: "Guide agents through setting up and using cross-compilation GCC toolchains: triplets, sysroots, pkg-config, QEMU-based testing, and commo..." },
   { name: "gcc", category: "compilers", desc: "Guide agents through GCC invocation: flag selection, build modes, warning triage, PGO, LTO, and common error patterns. Assume the project..." },
   { name: "llvm", category: "compilers", desc: "Guide agents through LLVM as a user: generating and inspecting IR, running existing optimisation passes with opt, lowering to assembly wi..." },
-  { name: "modern-c-cpp-standards", category: "compilers", desc: "Guide agents through current C and C++ standards: changed GCC defaults (C23, C++20), C23 and C2y features, C++26 reflection and contr..." },
   // computer-architecture
   { name: "abi-and-calling-conventions", category: "computer-architecture", desc: "Document application binary interface (ABI) rules: register roles, stack alignment, argument passing, return values, and variadic convent..." },
   { name: "branch-prediction-and-speculation", category: "computer-architecture", desc: "Explain how modern CPUs predict branches, execute speculatively, recover on mispredict, and why speculation created side channels (Spectr..." },
@@ -55,12 +54,10 @@ const skills = [
   { name: "linker-scripts", category: "embedded", desc: "Guide agents through writing and modifying GNU ld linker scripts for embedded targets: MEMORY and SECTIONS commands, VMA vs LMA for code ..." },
   { name: "openocd-jtag", category: "embedded", desc: "Guide agents through configuring OpenOCD for JTAG and SWD targets, flashing firmware to microcontrollers, attaching GDB for bare-metal de..." },
   // hpc
-  { name: "openmp", category: "hpc", desc: "Guide agents through OpenMP shared-memory parallelism: #pragma omp parallel for with scheduling clauses, reductions, data-sharing attribu..." },
   // kernel
   { name: "device-drivers", category: "kernel", desc: "Guide agents through Linux kernel device driver development: the driver model (platform_driver, i2c_driver, spi_driver), character device..." },
   { name: "kernel-debugging", category: "kernel", desc: "Guide agents through debugging the Linux kernel: kgdb over serial or USB, kdb built-in debugger commands, ftrace and trace-cmd, kprobes a..." },
   { name: "kernel-internals", category: "kernel", desc: "Guide agents through Linux kernel internals: the CFS and EEVDF schedulers, runqueues and vruntime, the buddy allocator and SLUB, vmalloc ..." },
-  { name: "kernel-testing", category: "kernel", desc: "Guide agents through testing the Linux kernel: KUnit in-kernel unit tests, the kselftest harness, syzkaller fuzzing with kcov coverage, L..." },
   // kernel-dev
   { name: "bus-drivers-i2c-spi", category: "kernel-dev", desc: "Guide agents through Linux I2C and SPI client drivers: bus registration, i2c_transfer / spi_sync, regmap abstraction, DT compatible on bu..." },
   { name: "device-tree", category: "kernel-dev", desc: "Guide agents through Linux device tree source (DTS): syntax, bindings, phandles, overlays, and how the kernel OF (Open Firmware) layer pa..." },
@@ -80,14 +77,11 @@ const skills = [
   { name: "memory-model", category: "low-level-programming", desc: "Guide agents through C++ and Rust memory models: memory orderings, the happens-before relation, atomic operations, fences, and practical ..." },
   { name: "simd-intrinsics", category: "low-level-programming", desc: "Guide agents through SIMD: reading auto-vectorization output, writing SSE2/AVX2/NEON intrinsics, runtime CPU feature detection, and choos..." },
   // observability
-  { name: "ebpf", category: "observability", desc: "Guide agents through writing, loading, and debugging eBPF programs using libbpf, bpftrace, and bpftool. Covers map types, program types, ..." },
-  { name: "sched-ext", category: "observability", desc: "Guide agents through sched_ext: enabling CONFIG_SCHED_CLASS_EXT, running scx schedulers (scx_lavd, scx_bpfland), writing a BPF schedu..." },
   // platform
   // profilers
   { name: "flamegraphs", category: "profilers", desc: "Guide agents through the pipeline from profiler data to SVG flamegraph, and teach interpretation of flamegraphs to drive concrete optimis..." },
   { name: "hardware-counters", category: "profilers", desc: "Guide agents through hardware performance counter analysis: collecting PMU events with perf stat -e, using the PAPI library for portable ..." },
   { name: "heaptrack", category: "profilers", desc: "Guide agents through heaptrack for heap allocation profiling on Linux: recording allocation traces, analysing with heaptrack_print, ident..." },
-  { name: "intel-vtune-amd-uprof", category: "profilers", desc: "Guide agents through CPU microarchitecture profiling with Intel VTune Profiler (free Community Edition) and AMD uProf: hotspot identifica..." },
   { name: "linux-perf", category: "profilers", desc: "Guide agents through perf for CPU profiling: sampling, hardware counter measurement, hotspot identification, and integration with flamegr..." },
   { name: "strace-ltrace", category: "profilers", desc: "Guide agents through tracing system calls with strace and library calls with ltrace \u2014 the most effective tools for diagnosing incorrect b..." },
   { name: "tracing-profilers", category: "profilers", desc: "Guide agents through instrumentation tracing with Perfetto and Tracy: track events and zones, recording traces, SQL analysis with trac..." },
@@ -100,7 +94,6 @@ const skills = [
   // security
   { name: "memory-safe-c-cpp", category: "security", desc: "Guide agents through making existing C and C++ safer: -fhardened and FORTIFY, counted_by bounds checks, library hardening, Arm MTE,..." },
   // virtualization
-  { name: "containers-internals", category: "virtualization", desc: "Guide agents through Linux container internals: namespaces (clone, unshare, nsenter), cgroups v2 resource limits, overlayfs storage, runc..." },
 ];
 
 function skillPath(skill) {
@@ -141,9 +134,9 @@ const tagInstalls = [
     desc: 'Full C/C++ toolchain — compilers, debuggers, profilers, build systems, binaries, safety, and low-level programming',
     color: 'cyan',
     subcategories: [
-      { label: 'Compilers', skills: ['gcc', 'clang', 'llvm', 'cross-gcc', 'cpp-modules', 'cpp-templates', 'modern-c-cpp-standards'] },
+      { label: 'Compilers', skills: ['gcc', 'clang', 'llvm', 'cross-gcc', 'cpp-modules', 'cpp-templates'] },
       { label: 'Debuggers', skills: ['gdb', 'lldb', 'core-dumps', 'concurrency-debugging', 'debug-optimized-builds', 'dwarf-debug-format'] },
-      { label: 'Profilers', skills: ['linux-perf', 'valgrind', 'flamegraphs', 'strace-ltrace', 'heaptrack', 'intel-vtune-amd-uprof', 'hardware-counters', 'tracing-profilers'] },
+      { label: 'Profilers', skills: ['linux-perf', 'valgrind', 'flamegraphs', 'strace-ltrace', 'heaptrack', 'hardware-counters', 'tracing-profilers'] },
       { label: 'Build Systems', skills: ['cmake', 'make', 'ninja', 'static-analysis', 'build-acceleration', 'include-what-you-use'] },
       { label: 'Binaries', skills: ['elf-inspection', 'linkers-lto', 'binutils', 'dynamic-linking'] },
       { label: 'Safety & Runtimes', skills: ['sanitizers', 'fuzzing', 'binary-hardening', 'formal-verification'] },
@@ -171,29 +164,13 @@ const tagInstalls = [
     subcategories: [
       { label: 'Architecture & MM', skills: ['linux-kernel-architecture', 'kernel-memory-management', 'kernel-concurrency', 'kernel-internals'] },
       { label: 'Driver Model', skills: ['device-tree', 'platform-device-model', 'writing-char-drivers', 'bus-drivers-i2c-spi', 'device-drivers'] },
-      { label: 'Debug & Test', skills: ['kernel-debugging', 'kernel-debugging-advanced', 'kernel-testing'] },
-    ],
-  },
-  {
-    tag: 'rust',
-    label: 'Rust',
-    desc: 'Full Rust toolchain — rustc, Cargo, debugging, profiling, FFI, cross-compilation, async internals, safety, and no_std',
-    color: 'amber',
-    subcategories: [
-    ],
-  },
-  {
-    tag: 'zig',
-    label: 'Zig',
-    desc: 'Full Zig toolchain — compiler, build system, C interop, debugging, cross-compilation, testing, and comptime',
-    color: 'magenta',
-    subcategories: [
+      { label: 'Debug & Test', skills: ['kernel-debugging', 'kernel-debugging-advanced'] },
     ],
   },
   {
     tag: 'embedded',
-    label: 'Embedded & QEMU',
-    desc: 'RTOS, hardware debug, linker scripts, embedded Rust, and QEMU simulation',
+    label: 'Embedded',
+    desc: 'Hardware debug and linker scripts',
     color: 'green',
     subcategories: [
       { label: 'Debug & Flash', skills: ['openocd-jtag', 'cross-gcc'] },
@@ -201,33 +178,22 @@ const tagInstalls = [
     ],
   },
   {
-    tag: 'gpu-hpc',
-    label: 'GPU & HPC',
-    desc: 'CUDA, ROCm, Triton, GPU memory model, OpenMP, MPI, and RDMA',
-    color: 'cyan',
-    subcategories: [
-      { label: 'HPC', skills: ['openmp'] },
-    ],
-  },
-  {
     tag: 'systems',
     label: 'Systems & Internals',
-    desc: 'Compiler internals, virtualization, async I/O, allocators, security, and platform-specific',
+    desc: 'Compiler internals, allocators, and security',
     color: 'amber',
     subcategories: [
       { label: 'Compiler Internals', skills: ['compiler-optimizations-deep'] },
-      { label: 'Virtualization', skills: ['containers-internals'] },
       { label: 'Allocators & NUMA', skills: ['custom-allocators'] },
       { label: 'Security', skills: ['memory-safe-c-cpp'] },
     ],
   },
   {
     tag: 'observability',
-    label: 'Observability & WASM',
-    desc: 'eBPF tracing, WebAssembly runtimes, and binary hardening',
+    label: 'Hardening',
+    desc: 'Binary hardening',
     color: 'red',
     subcategories: [
-      { label: 'eBPF', skills: ['ebpf', 'sched-ext'] },
       { label: 'Hardening', skills: ['binary-hardening'] },
     ],
   },
@@ -249,7 +215,7 @@ const steps = [
 const treeStructure = `<span class="dir">low-level-dev-skills/</span>
 ├── <span class="file">README.md</span>
 ├── <span class="file">AGENTS.md</span>
-└── <span class="dir">skills/</span>    <span class="comment"># 82 skills across 18 categories</span>
+└── <span class="dir">skills/</span>    <span class="comment"># 75 skills across 15 categories</span>
     ├── <span class="dir">allocators/</span>  <span class="comment"># custom-allocators</span>
     ├── <span class="dir">baremetal/</span>  <span class="comment"># adc-dac-baremetal baremetal-startup bootloaders-embedded datasheet-and-refmanual-reading dma-baremetal gpio-baremetal +8</span>
     ├── <span class="dir">binaries/</span>  <span class="comment"># binutils dynamic-linking elf-inspection linkers-lto</span>
@@ -259,15 +225,12 @@ const treeStructure = `<span class="dir">low-level-dev-skills/</span>
     ├── <span class="dir">computer-architecture/</span>  <span class="comment"># abi-and-calling-conventions branch-prediction-and-speculation cpu-pipelines-and-hazards memory-hierarchy-and-caches virtual-memory-paging-and-tlb</span>
     ├── <span class="dir">debuggers/</span>  <span class="comment"># concurrency-debugging core-dumps debug-optimized-builds dwarf-debug-format gdb lldb</span>
     ├── <span class="dir">embedded/</span>  <span class="comment"># linker-scripts openocd-jtag</span>
-    ├── <span class="dir">hpc/</span>  <span class="comment"># openmp</span>
-    ├── <span class="dir">kernel/</span>  <span class="comment"># device-drivers kernel-debugging kernel-internals kernel-testing</span>
+    ├── <span class="dir">kernel/</span>  <span class="comment"># device-drivers kernel-debugging kernel-internals</span>
     ├── <span class="dir">kernel-dev/</span>  <span class="comment"># bus-drivers-i2c-spi device-tree kernel-concurrency kernel-debugging-advanced kernel-memory-management linux-kernel-architecture +4</span>
     ├── <span class="dir">low-level-programming/</span>  <span class="comment"># assembly-arm assembly-x86 cpp-coroutines cpu-cache-opt +4</span>
-    ├── <span class="dir">observability/</span>  <span class="comment"># ebpf sched-ext</span>
-    ├── <span class="dir">profilers/</span>  <span class="comment"># flamegraphs hardware-counters heaptrack intel-vtune-amd-uprof linux-perf strace-ltrace +2</span>
+    ├── <span class="dir">profilers/</span>  <span class="comment"># flamegraphs hardware-counters heaptrack linux-perf strace-ltrace +2</span>
     ├── <span class="dir">runtimes/</span>  <span class="comment"># binary-hardening formal-verification fuzzing sanitizers</span>
-    ├── <span class="dir">security/</span>  <span class="comment"># memory-safe-c-cpp</span>
-    ├── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals</span>`;
+    └── <span class="dir">security/</span>  <span class="comment"># memory-safe-c-cpp</span>`;
 
 function updateClock() {
   const now = new Date();

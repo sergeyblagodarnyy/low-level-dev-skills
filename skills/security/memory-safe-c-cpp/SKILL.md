@@ -215,4 +215,3 @@ tag, 128 bits on 64-bit systems). Out-of-bounds and forged pointers trap in hard
 - Use `skills/runtimes/binary-hardening` for RELRO, PIE, CFI, shadow stacks and checksec
 - Use `skills/runtimes/sanitizers` for ASan/UBSan/MSan in testing
 - Use `skills/allocators/custom-allocators` for allocator internals
-- Use `skills/compilers/modern-c-cpp-standards` for C23 checked arithmetic and library hardening

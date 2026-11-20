@@ -158,4 +158,3 @@ For clang-tidy config examples, see [references/clang-tidy.md](references/clang-
 - Use `skills/runtimes/sanitizers` for `-fsanitize=*` workflows
 - Use `skills/compilers/llvm` for IR-level work (`opt`, `llc`, `llvm-dis`)
 - Use `skills/binaries/linkers-lto` for linker-level LTO details
-- Use `skills/compilers/modern-c-cpp-standards` for C23/C++26 feature support and libc++ hardening

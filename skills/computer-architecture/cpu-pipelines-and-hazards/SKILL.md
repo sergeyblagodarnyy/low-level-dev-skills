@@ -11,7 +11,6 @@ Explain classic and modern CPU pipeline concepts: stages, data and control hazar
 
 ## Triggers
 
-- Interpreting pipeline stall metrics from `skills/profilers/intel-vtune-amd-uprof`
 - Teaching why instruction order affects throughput
 - Relating assembly scheduling to hardware behavior
 - Debugging unexpected performance cliffs in hot loops
@@ -100,5 +99,4 @@ VTune "Microarchitecture Exploration" maps to pipeline slots.
 - `skills/computer-architecture/branch-prediction-and-speculation` — mispredict cost
 - `skills/computer-architecture/memory-hierarchy-and-caches` — load latency
 - `skills/low-level-programming/cpu-cache-opt` — cache-line effects
-- `skills/profilers/intel-vtune-amd-uprof` — pipeline analysis
 - `skills/low-level-programming/assembly-arm` — instruction scheduling

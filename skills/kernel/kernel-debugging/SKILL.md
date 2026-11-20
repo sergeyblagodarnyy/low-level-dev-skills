@@ -247,4 +247,3 @@ Kernel issue type?
 - `skills/kernel/kernel-internals` — subsystem knowledge for interpreting traces
 - `skills/debuggers/gdb` — GDB commands shared with kgdb
 - `skills/profilers/linux-perf` — perf for kernel hotspots
-- `skills/observability/ebpf` — non-invasive kernel tracing alternative

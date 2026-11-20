@@ -211,7 +211,6 @@ cd pcm && cmake -S . -B build && cmake --build build
 
 ## Related skills
 
-- Use `skills/profilers/intel-vtune-amd-uprof` for guided microarchitecture analysis
 - Use `skills/profilers/linux-perf` for perf record/report and flamegraph generation
 - Use `skills/low-level-programming/cpu-cache-opt` for applying cache optimization patterns
 - Use `skills/low-level-programming/simd-intrinsics` for improving FLOPS/cycle metrics
