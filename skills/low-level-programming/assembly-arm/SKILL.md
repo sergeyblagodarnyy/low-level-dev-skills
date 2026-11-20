@@ -217,8 +217,6 @@ Porting checklist
 └── Keep NEON path for Apple M1–M3 (no SVE); use SVE2 on Graviton/M4+
 ```
 
-See `skills/platform/arm-sve` for SVE intrinsics and auto-vectorization flags.
-
 For a register reference, see [references/reference.md](references/reference.md).
 
 ## Related skills
@@ -226,4 +224,3 @@ For a register reference, see [references/reference.md](references/reference.md)
 - Use `skills/low-level-programming/assembly-x86` for x86-64 assembly
 - Use `skills/compilers/cross-gcc` for cross-compilation toolchain
 - Use `skills/debuggers/gdb` for debugging ARM code with gdbserver
-- Use `skills/platform/arm-sve` for SVE/SVE2 scalable vectors

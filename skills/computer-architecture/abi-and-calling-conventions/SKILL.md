@@ -61,8 +61,6 @@ See `skills/low-level-programming/assembly-arm`.
 | Return | `a0`, `a1` |
 | Stack align | 16-byte |
 
-See `skills/low-level-programming/assembly-riscv`.
-
 ### 4. Stack frame layout (conceptual)
 
 ```text
@@ -106,5 +104,4 @@ objdump -d -M intel ./a.out
 
 - `skills/low-level-programming/assembly-x86` — x86-64 asm
 - `skills/low-level-programming/assembly-arm` — AAPCS examples
-- `skills/low-level-programming/assembly-riscv` — RISC-V asm
 - `skills/binaries/elf-inspection` — symbol and relocation views

@@ -124,7 +124,7 @@ bss_done:
     j .
 ```
 
-Trap vector: `mtvec` for M-mode; see `skills/platform/riscv-privileged`.
+Trap vector: `mtvec` for M-mode.
 
 ### 5. crt0 responsibilities
 
@@ -171,4 +171,3 @@ Cross-link `skills/embedded/linker-scripts` for MEMORY/SECTIONS layout.
 - `skills/baremetal/bootloaders-embedded` — VTOR relocation on app jump
 - `skills/embedded/openocd-jtag` — halt at `Reset_Handler` with GDB
 - `skills/low-level-programming/assembly-arm` — Thumb-2 syntax
-- `skills/platform/riscv-privileged` — RISC-V trap setup

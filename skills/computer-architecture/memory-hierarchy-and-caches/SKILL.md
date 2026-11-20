@@ -98,5 +98,4 @@ perf stat -e cache-references,cache-misses,L1-dcache-load-misses ./app
 - `skills/low-level-programming/cpu-cache-opt` — practical optimization
 - `skills/computer-architecture/cpu-pipelines-and-hazards` — load-use stalls
 - `skills/computer-architecture/virtual-memory-paging-and-tlb` — TLB misses
-- `skills/allocators/numa-programming` — remote memory latency
 - `skills/profilers/hardware-counters` — perf counter events

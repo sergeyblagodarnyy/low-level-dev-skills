@@ -93,7 +93,5 @@ Loop-invariant code motion hoists `x * scale` out of inner loop when legal — r
 
 ## Related skills
 
-- `skills/compiler-internals/llvm-ir-and-passes` — IR-level opts
-- `skills/compiler-internals/code-generation-and-backends` — ISel and backends
 - `skills/computer-architecture/cpu-pipelines-and-hazards` — scheduling context
 - `skills/low-level-programming/simd-intrinsics` — manual vectorization

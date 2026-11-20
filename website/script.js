@@ -1,7 +1,6 @@
 const skills = [
   // allocators
   { name: "custom-allocators", category: "allocators", desc: "Guide agents through memory allocator design and tuning: pool/slab/arena/buddy taxonomy, jemalloc internals and MALLOC_CONF, mimalloc des..." },
-  { name: "numa-programming", category: "allocators", desc: "Guide agents through NUMA-aware programming: topology detection with numactl and sysfs, libnuma API (numa_alloc_onnode, mbind, set_mempol..." },
   // baremetal
   { name: "adc-dac-baremetal", category: "baremetal", desc: "Configure ADC and DAC peripherals: channel selection, sampling times, calibration sequences, DMA circular buffers, and DAC static/dynamic..." },
   { name: "baremetal-startup", category: "baremetal", desc: "Guide agents through bare-metal startup from reset to main(): reset and exception vectors, .data/.bss initialization, stack and heap setu..." },
@@ -30,12 +29,7 @@ const skills = [
   { name: "ninja", category: "build-systems", desc: "Guide agents through Ninja as a build executor: diagnosing failures, controlling parallelism, generating from CMake, and understanding th..." },
   { name: "static-analysis", category: "build-systems", desc: "Guide agents through selecting, running, and triaging static analysis tools for C/C++ \u2014 clang-tidy, cppcheck, and scan-build \u2014 including ..." },
   // compiler-internals
-  { name: "code-generation-and-backends", category: "compiler-internals", desc: "Overview LLVM (and general compiler) backend code generation: IR legalization, SelectionDAG instruction selection, register allocation, a..." },
-  { name: "compiler-frontend", category: "compiler-internals", desc: "Guide agents through building a compiler frontend: lexers (hand-written DFA vs flex), Pratt parsing for expressions, recursive-descent fo..." },
   { name: "compiler-optimizations-deep", category: "compiler-internals", desc: "Explain optimization phases beyond flags: mid-level IR opts, register allocation, instruction selection/scheduling, vectorization boundar..." },
-  { name: "jit-compilation", category: "compiler-internals", desc: "Guide agents through just-in-time compilation: LLVM ORC JIT v2 (ExecutionSession, IRLayer, ObjectLayer), LLJIT for simpler use cases, Cra..." },
-  { name: "llvm-ir-and-passes", category: "compiler-internals", desc: "Teach agents to read and reason about LLVM IR (SSA, types, terminators), navigate the standard pass pipeline, and use opt/llvm-dis for in..." },
-  { name: "llvm-passes", category: "compiler-internals", desc: "Guide agents through writing LLVM optimization passes with the New Pass Manager: FunctionPass and ModulePass structure, PassPluginLibrary..." },
   // compilers
   { name: "clang", category: "compilers", desc: "Guide agents through Clang-specific features: superior diagnostics, sanitizer integration, optimization remarks, static analysis, and LLV..." },
   { name: "cpp-modules", category: "compilers", desc: "Guide agents through authoring, building, and debugging C++20 modules: named modules vs header units, module partitions, CMake integratio..." },
@@ -61,15 +55,12 @@ const skills = [
   { name: "linker-scripts", category: "embedded", desc: "Guide agents through writing and modifying GNU ld linker scripts for embedded targets: MEMORY and SECTIONS commands, VMA vs LMA for code ..." },
   { name: "openocd-jtag", category: "embedded", desc: "Guide agents through configuring OpenOCD for JTAG and SWD targets, flashing firmware to microcontrollers, attaching GDB for bare-metal de..." },
   // hpc
-  { name: "mpi", category: "hpc", desc: "Guide agents through MPI (Message Passing Interface) programming: point-to-point and collective communication, non-blocking operations, s..." },
   { name: "openmp", category: "hpc", desc: "Guide agents through OpenMP shared-memory parallelism: #pragma omp parallel for with scheduling clauses, reductions, data-sharing attribu..." },
-  { name: "rdma-verbs", category: "hpc", desc: "Guide agents through RDMA programming with libibverbs: one-sided vs two-sided operations, RC/UC/UD transports, device setup (ibv_get_devi..." },
   // kernel
   { name: "device-drivers", category: "kernel", desc: "Guide agents through Linux kernel device driver development: the driver model (platform_driver, i2c_driver, spi_driver), character device..." },
   { name: "kernel-debugging", category: "kernel", desc: "Guide agents through debugging the Linux kernel: kgdb over serial or USB, kdb built-in debugger commands, ftrace and trace-cmd, kprobes a..." },
   { name: "kernel-internals", category: "kernel", desc: "Guide agents through Linux kernel internals: the CFS and EEVDF schedulers, runqueues and vruntime, the buddy allocator and SLUB, vmalloc ..." },
   { name: "kernel-testing", category: "kernel", desc: "Guide agents through testing the Linux kernel: KUnit in-kernel unit tests, the kselftest harness, syzkaller fuzzing with kcov coverage, L..." },
-  { name: "os-dev-scratch", category: "kernel", desc: "Guide agents through building a minimal operating system from scratch: bootloader stages (BIOS/GRUB vs UEFI/limine), 64-bit long mode set..." },
   // kernel-dev
   { name: "bus-drivers-i2c-spi", category: "kernel-dev", desc: "Guide agents through Linux I2C and SPI client drivers: bus registration, i2c_transfer / spi_sync, regmap abstraction, DT compatible on bu..." },
   { name: "device-tree", category: "kernel-dev", desc: "Guide agents through Linux device tree source (DTS): syntax, bindings, phandles, overlays, and how the kernel OF (Open Firmware) layer pa..." },
@@ -80,25 +71,18 @@ const skills = [
   { name: "platform-device-model", category: "kernel-dev", desc: "Explain the Linux driver model for platform (and similar) buses: struct device, device_driver, probe/remove, resource acquisition, sysfs,..." },
   { name: "writing-char-drivers", category: "kernel-dev", desc: "Guide agents through Linux character device implementation: struct file_operations, cdev registration, safe userspace copies, ioctl desig..." },
   // languages
-  { name: "carbon-lang", category: "languages", desc: "Guide agents through the Carbon programming language: syntax fundamentals, bidirectional C++ interoperability via Carbon.h, building from..." },
-  { name: "hare-lang", category: "languages", desc: "Guide agents through the Hare programming language: design philosophy (simple, stable, compiled), hare build/test/run workflows, stdlib o..." },
   // low-level-programming
   { name: "assembly-arm", category: "low-level-programming", desc: "Guide agents through AArch64 (64-bit) and ARM (32-bit Thumb) assembly: registers, calling conventions, inline asm, and NEON/SVE SIMD patt..." },
-  { name: "assembly-riscv", category: "low-level-programming", desc: "Guide agents through RISC-V assembly programming: RV32/RV64 instruction sets, register naming and calling conventions (psABI), ISA extens..." },
   { name: "assembly-x86", category: "low-level-programming", desc: "Guide agents through x86-64 assembly: reading compiler output, understanding the ABI, writing inline asm, and common patterns." },
   { name: "cpp-coroutines", category: "low-level-programming", desc: "Guide agents through C++20 coroutine mechanics: co_await, co_yield, co_return, implementing the required promise_type, understanding coro..." },
   { name: "cpu-cache-opt", category: "low-level-programming", desc: "Guide agents through cache-aware programming: diagnosing cache misses with perf, data layout transformations (AoS\u2192SoA), false sharing det..." },
-  { name: "interpreters", category: "low-level-programming", desc: "Guide agents through implementing efficient bytecode interpreters and simple JITs in C/C++: dispatch strategies, VM architecture choices,..." },
   { name: "linux-kernel-modules", category: "low-level-programming", desc: "Guide agents through writing loadable Linux kernel modules (LKMs): the Kbuild build system, module parameters, /proc and sysfs interfaces..." },
   { name: "memory-model", category: "low-level-programming", desc: "Guide agents through C++ and Rust memory models: memory orderings, the happens-before relation, atomic operations, fences, and practical ..." },
-  { name: "riscv-vector", category: "low-level-programming", desc: "Guide agents through the RISC-V Vector extension: the vector-length-agnostic model (VLEN, SEW, LMUL, vsetvli), intrinsics and assembl..." },
   { name: "simd-intrinsics", category: "low-level-programming", desc: "Guide agents through SIMD: reading auto-vectorization output, writing SSE2/AVX2/NEON intrinsics, runtime CPU feature detection, and choos..." },
   // observability
   { name: "ebpf", category: "observability", desc: "Guide agents through writing, loading, and debugging eBPF programs using libbpf, bpftrace, and bpftool. Covers map types, program types, ..." },
   { name: "sched-ext", category: "observability", desc: "Guide agents through sched_ext: enabling CONFIG_SCHED_CLASS_EXT, running scx schedulers (scx_lavd, scx_bpfland), writing a BPF schedu..." },
   // platform
-  { name: "arm-sve", category: "platform", desc: "Guide agents through ARM Scalable Vector Extension (SVE/SVE2) programming: vector-length agnostic (VLA) code, predicate registers, SVE in..." },
-  { name: "riscv-privileged", category: "platform", desc: "Guide agents through the RISC-V privileged specification: M/S/U privilege modes, CSR registers, trap handling, PLIC and CLINT interrupt c..." },
   // profilers
   { name: "flamegraphs", category: "profilers", desc: "Guide agents through the pipeline from profiler data to SVG flamegraph, and teach interpretation of flamegraphs to drive concrete optimis..." },
   { name: "hardware-counters", category: "profilers", desc: "Guide agents through hardware performance counter analysis: collecting PMU events with perf stat -e, using the PAPI library for portable ..." },
@@ -113,8 +97,6 @@ const skills = [
   { name: "formal-verification", category: "runtimes", desc: "Guide agents through formal verification of Rust and C: Kani proof harnesses and contracts, CBMC bounded model checking, Frama-C WP an..." },
   { name: "fuzzing", category: "runtimes", desc: "Guide agents through setting up and running coverage-guided fuzz testing: libFuzzer (in-process) and AFL++ (fork-based), with sanitizer i..." },
   { name: "sanitizers", category: "runtimes", desc: "Guide agents through choosing, enabling, and interpreting compiler runtime sanitizers for finding memory errors, undefined behaviour, dat..." },
-  { name: "wasm-emscripten", category: "runtimes", desc: "Guide agents through compiling C/C++ to WebAssembly using Emscripten: emcc flag selection, function exports, memory model configuration, ..." },
-  { name: "wasm-wasmtime", category: "runtimes", desc: "Guide agents through wasmtime: running WASM modules from the CLI, WASI APIs, the component model with WIT interfaces, embedding wasmtime ..." },
   // security
   { name: "memory-safe-c-cpp", category: "security", desc: "Guide agents through making existing C and C++ safer: -fhardened and FORTIFY, counted_by bounds checks, library hardening, Arm MTE,..." },
   // virtualization
@@ -165,7 +147,7 @@ const tagInstalls = [
       { label: 'Build Systems', skills: ['cmake', 'make', 'ninja', 'static-analysis', 'build-acceleration', 'include-what-you-use'] },
       { label: 'Binaries', skills: ['elf-inspection', 'linkers-lto', 'binutils', 'dynamic-linking'] },
       { label: 'Safety & Runtimes', skills: ['sanitizers', 'fuzzing', 'binary-hardening', 'formal-verification'] },
-      { label: 'Low-Level Programming', skills: ['assembly-x86', 'assembly-arm', 'assembly-riscv', 'simd-intrinsics', 'memory-model', 'cpu-cache-opt', 'interpreters', 'cpp-coroutines', 'linux-kernel-modules', 'riscv-vector'] },
+      { label: 'Low-Level Programming', skills: ['assembly-x86', 'assembly-arm', 'simd-intrinsics', 'memory-model', 'cpu-cache-opt', 'cpp-coroutines', 'linux-kernel-modules'] },
       { label: 'Computer Architecture', skills: ['cpu-pipelines-and-hazards', 'memory-hierarchy-and-caches', 'virtual-memory-paging-and-tlb', 'abi-and-calling-conventions', 'branch-prediction-and-speculation'] },
     ],
   },
@@ -224,7 +206,7 @@ const tagInstalls = [
     desc: 'CUDA, ROCm, Triton, GPU memory model, OpenMP, MPI, and RDMA',
     color: 'cyan',
     subcategories: [
-      { label: 'HPC', skills: ['openmp', 'mpi', 'rdma-verbs'] },
+      { label: 'HPC', skills: ['openmp'] },
     ],
   },
   {
@@ -233,11 +215,10 @@ const tagInstalls = [
     desc: 'Compiler internals, virtualization, async I/O, allocators, security, and platform-specific',
     color: 'amber',
     subcategories: [
-      { label: 'Compiler Internals', skills: ['compiler-frontend', 'llvm-passes', 'llvm-ir-and-passes', 'compiler-optimizations-deep', 'code-generation-and-backends', 'jit-compilation'] },
+      { label: 'Compiler Internals', skills: ['compiler-optimizations-deep'] },
       { label: 'Virtualization', skills: ['containers-internals'] },
-      { label: 'Allocators & NUMA', skills: ['custom-allocators', 'numa-programming'] },
+      { label: 'Allocators & NUMA', skills: ['custom-allocators'] },
       { label: 'Security', skills: ['memory-safe-c-cpp'] },
-      { label: 'Platform', skills: ['arm-sve', 'riscv-privileged'] },
     ],
   },
   {
@@ -247,7 +228,6 @@ const tagInstalls = [
     color: 'red',
     subcategories: [
       { label: 'eBPF', skills: ['ebpf', 'sched-ext'] },
-      { label: 'WebAssembly', skills: ['wasm-emscripten', 'wasm-wasmtime'] },
       { label: 'Hardening', skills: ['binary-hardening'] },
     ],
   },
@@ -269,27 +249,25 @@ const steps = [
 const treeStructure = `<span class="dir">low-level-dev-skills/</span>
 ├── <span class="file">README.md</span>
 ├── <span class="file">AGENTS.md</span>
-└── <span class="dir">skills/</span>    <span class="comment"># 100 skills across 20 categories</span>
-    ├── <span class="dir">allocators/</span>  <span class="comment"># custom-allocators numa-programming</span>
+└── <span class="dir">skills/</span>    <span class="comment"># 82 skills across 18 categories</span>
+    ├── <span class="dir">allocators/</span>  <span class="comment"># custom-allocators</span>
     ├── <span class="dir">baremetal/</span>  <span class="comment"># adc-dac-baremetal baremetal-startup bootloaders-embedded datasheet-and-refmanual-reading dma-baremetal gpio-baremetal +8</span>
     ├── <span class="dir">binaries/</span>  <span class="comment"># binutils dynamic-linking elf-inspection linkers-lto</span>
     ├── <span class="dir">build-systems/</span>  <span class="comment"># build-acceleration cmake include-what-you-use make +3</span>
-    ├── <span class="dir">compiler-internals/</span>  <span class="comment"># code-generation-and-backends compiler-frontend compiler-optimizations-deep jit-compilation llvm-ir-and-passes llvm-passes +1</span>
+    ├── <span class="dir">compiler-internals/</span>  <span class="comment"># compiler-optimizations-deep +1</span>
     ├── <span class="dir">compilers/</span>  <span class="comment"># clang cpp-modules cpp-templates cross-gcc gcc llvm +3</span>
     ├── <span class="dir">computer-architecture/</span>  <span class="comment"># abi-and-calling-conventions branch-prediction-and-speculation cpu-pipelines-and-hazards memory-hierarchy-and-caches virtual-memory-paging-and-tlb</span>
     ├── <span class="dir">debuggers/</span>  <span class="comment"># concurrency-debugging core-dumps debug-optimized-builds dwarf-debug-format gdb lldb</span>
     ├── <span class="dir">embedded/</span>  <span class="comment"># linker-scripts openocd-jtag</span>
-    ├── <span class="dir">hpc/</span>  <span class="comment"># mpi openmp rdma-verbs</span>
-    ├── <span class="dir">kernel/</span>  <span class="comment"># device-drivers kernel-debugging kernel-internals kernel-testing os-dev-scratch</span>
+    ├── <span class="dir">hpc/</span>  <span class="comment"># openmp</span>
+    ├── <span class="dir">kernel/</span>  <span class="comment"># device-drivers kernel-debugging kernel-internals kernel-testing</span>
     ├── <span class="dir">kernel-dev/</span>  <span class="comment"># bus-drivers-i2c-spi device-tree kernel-concurrency kernel-debugging-advanced kernel-memory-management linux-kernel-architecture +4</span>
-    ├── <span class="dir">languages/</span>  <span class="comment"># carbon-lang hare-lang</span>
-    ├── <span class="dir">low-level-programming/</span>  <span class="comment"># assembly-arm assembly-riscv assembly-x86 cpp-coroutines cpu-cache-opt interpreters +4</span>
+    ├── <span class="dir">low-level-programming/</span>  <span class="comment"># assembly-arm assembly-x86 cpp-coroutines cpu-cache-opt +4</span>
     ├── <span class="dir">observability/</span>  <span class="comment"># ebpf sched-ext</span>
-    ├── <span class="dir">platform/</span>  <span class="comment"># arm-sve riscv-privileged</span>
     ├── <span class="dir">profilers/</span>  <span class="comment"># flamegraphs hardware-counters heaptrack intel-vtune-amd-uprof linux-perf strace-ltrace +2</span>
-    ├── <span class="dir">runtimes/</span>  <span class="comment"># binary-hardening formal-verification fuzzing sanitizers wasm-emscripten wasm-wasmtime</span>
+    ├── <span class="dir">runtimes/</span>  <span class="comment"># binary-hardening formal-verification fuzzing sanitizers</span>
     ├── <span class="dir">security/</span>  <span class="comment"># memory-safe-c-cpp</span>
-    └── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals</span>`;
+    ├── <span class="dir">virtualization/</span>  <span class="comment"># containers-internals</span>`;
 
 function updateClock() {
   const now = new Date();

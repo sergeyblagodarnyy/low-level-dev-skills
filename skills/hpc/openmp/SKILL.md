@@ -209,8 +209,6 @@ export OMP_NESTED=true   # deprecated; use MAX_ACTIVE_LEVELS
 
 ## Related skills
 
-- `skills/hpc/mpi` — distributed memory complement
 - `skills/low-level-programming/cpu-cache-opt` — false sharing deep dive
 - `skills/profilers/intel-vtune-amd-uprof` — OpenMP region analysis in VTune
 - `skills/compilers/gcc` — `-fopenmp` flags
-- `skills/allocators/numa-programming` — NUMA-aware thread binding

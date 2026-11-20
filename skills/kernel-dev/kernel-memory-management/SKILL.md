@@ -70,7 +70,7 @@ __free_pages(page, order);
 
 ### 5. NUMA basics
 
-On NUMA systems, `kmalloc` prefers local node; use `alloc_pages_node()` or `mbind` policies for HPC paths — see `skills/allocators/numa-programming`.
+On NUMA systems, `kmalloc` prefers local node; use `alloc_pages_node()` or `mbind` policies.
 
 ### 6. Debugging
 
@@ -103,5 +103,4 @@ Kernel config: `CONFIG_SLUB_DEBUG`, `CONFIG_KASAN` for use-after-free.
 - `skills/kernel/kernel-internals` — page cache, OOM killer
 - `skills/kernel/device-drivers` — `dma_alloc_coherent`
 - `skills/allocators/custom-allocators` — userspace allocator design
-- `skills/allocators/numa-programming` — NUMA-aware allocation
 - `skills/runtimes/sanitizers` — KASAN overlap

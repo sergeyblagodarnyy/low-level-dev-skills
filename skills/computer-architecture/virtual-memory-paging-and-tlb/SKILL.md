@@ -63,8 +63,6 @@ Mitigations:
 
 Many MCUs use **MPU** (region-based) not full paging — no TLB, fixed region count. Application processors use MMU + OS.
 
-See `skills/platform/riscv-privileged` for Sv39/Sv48.
-
 ### 6. Userspace inspection (Linux)
 
 ```bash
@@ -92,6 +90,3 @@ pmap -x $$
 
 - `skills/computer-architecture/memory-hierarchy-and-caches` — cache after translation
 - `skills/kernel-dev/kernel-memory-management` — kernel page allocator
-- `skills/kernel/os-dev-scratch` — build paging from scratch
-- `skills/platform/riscv-privileged` — Sv39 page tables
-- `skills/allocators/numa-programming` — NUMA and migration

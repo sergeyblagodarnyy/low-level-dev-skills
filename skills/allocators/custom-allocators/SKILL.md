@@ -231,7 +231,6 @@ Compare: single-thread alloc/free, multi-thread contention, mixed size distribut
 
 ## Related skills
 
-- `skills/allocators/numa-programming` — NUMA-aware allocation
 - `skills/profilers/heaptrack` — allocation hotspot profiling
 - `skills/profilers/valgrind` — heap leak detection
 - `skills/low-level-programming/cpu-cache-opt` — allocator alignment and false sharing

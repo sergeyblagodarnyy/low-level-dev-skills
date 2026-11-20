@@ -16,7 +16,7 @@ skills/
 ├── build-systems/    # cmake, make, ninja
 ├── binaries/         # elf-inspection, linkers-lto, binutils
 ├── runtimes/         # sanitizers, fuzzing
-└── low-level-programming/  # assembly-x86, assembly-arm, interpreters
+└── low-level-programming/  # assembly-x86, assembly-arm
 ```
 
 Each skill has a `SKILL.md` file and optional `references/` for detailed content.
